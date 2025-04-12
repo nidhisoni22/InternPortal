@@ -400,13 +400,15 @@ a:hover {
 
 .stat-number {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
     line-height: 1;
     letter-spacing: -2px;
     color: #0d6efd;
     transition: all 0.3s ease;
+    display: block;
+    width: 100%;
 }
 
 .stat-item:hover .stat-number {
@@ -422,8 +424,10 @@ a:hover {
     color: var(--gray-color);
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
 .stat-item:hover .stat-label {
@@ -449,8 +453,34 @@ a:hover {
     }
 
     .stat-label {
-        font-size: 1rem;
+        font-size: 0.9rem;
         max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-number {
+        font-size: 2.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .stat-item {
+        margin-bottom: 1.5rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 }
 
@@ -746,7 +776,7 @@ a:hover {
 }
 
 .company-logo {
-    width: 24px;
+    width: 45px;
     height: 24px;
     margin-right: 8px;
 }
@@ -755,6 +785,7 @@ a:hover {
 .testimonial-stats h3 {
     background: linear-gradient(135deg, #4A90E2, #764BA2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0;
 }
