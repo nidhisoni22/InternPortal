@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Details - InternPortal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for Internship Details page */
+        .internship-details-header {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+            margin-top: 76px;
+        }
+
+        .company-logo-lg {
+            width: 100px;
+            height: 100px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .company-logo-lg i {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .internship-title-lg {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .company-name-lg {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .detail-badge {
+            background-color: #f8f9fa;
+            border-radius: 50px;
+            padding: 8px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .detail-badge i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .detail-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .detail-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .detail-section ul {
+            padding-left: 20px;
+        }
+
+        .detail-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .apply-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            z-index: 100;
+        }
+
+        .apply-section h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .apply-btn {
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            background-color: #4361ee;
+            border-color: #4361ee;
+            border-radius: 50px;
+        }
+
+        .key-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .key-detail i {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #4361ee;
+            font-size: 1.2rem;
+        }
+
+        .key-detail-text h5 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .key-detail-text p {
+            margin-bottom: 0;
+            color: #6c757d;
+            font-size: 1rem;
+        }
+
+        /* Back button styling */
+        .btn-outline-secondary {
+            border-color: #6c757d;
+            color: #6c757d;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">InternPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="internship.html">Internships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Resume Tips</a></li>
+                            <li><a class="dropdown-item" href="#">Interview Prep</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Career Advice</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-flex social-icons">
+                    <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button at Top -->
+    <div class="container mt-4">
+        <a href="internship.html" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left me-2"></i> Back to Internships
+        </a>
+    </div>
+
+    <!-- Internship Details Header -->
+    <header class="internship-details-header mt-4">
+        <div class="container">
+            <div class="d-flex align-items-center mb-4">
+                <div class="company-logo-lg">
+                    <i id="internship-icon" class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                    <h1 id="internship-title" class="internship-title-lg">Software Development Intern</h1>
+                    <p id="company-name" class="company-name-lg">Google</p>
+                    <div>
+                        <span class="badge bg-success">Actively Hiring</span>
+                        <span class="badge bg-primary">Verified</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <div class="detail-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="location">Bangalore</span>
+                </div>
+                <div class="detail-badge">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="duration">3 Months</span>
+                </div>
+                <div class="detail-badge">
+                    <i class="fas fa-rupee-sign"></i>
+                    <span id="stipend">₹25,000/month</span>
+                </div>
+                <div class="detail-badge">
+                    <i class="fas fa-home"></i>
+                    <span id="work-type">On-site</span>
+                </div>
+                <div class="detail-badge">
+                    <i class="fas fa-clock"></i>
+                    <span id="apply-by">Apply by 30 Jun 2024</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Internship Details Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column - Details -->
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <!-- About Internship -->
+                    <div class="detail-section">
+                        <h3>About the Internship</h3>
+                        <p id="description">Join our team to work on cutting-edge technologies and gain hands-on experience in software development. You'll be working with experienced developers on real projects that impact millions of users worldwide. This internship offers a unique opportunity to learn and grow in a collaborative environment while contributing to meaningful work.</p>
+                        <p><strong>Program Structure:</strong> 60% of the content is focused on the learning phase, while the remaining 40% involves hands-on experience through a live project. Based on the company's evaluation of performance, a Pre-Placement Offer (PPO) may be extended.</p>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <div class="detail-section">
+                        <h3>Key Responsibilities</h3>
+                        <ul id="responsibilities">
+                            <li>Develop and maintain software applications using modern programming languages and frameworks</li>
+                            <li>Collaborate with cross-functional teams to define, design, and ship new features</li>
+                            <li>Write clean, maintainable, and efficient code</li>
+                            <li>Participate in code reviews and contribute to technical discussions</li>
+                            <li>Debug production issues and implement fixes</li>
+                            <li>Learn and adopt best practices for software development</li>
+                        </ul>
+                    </div>
+
+                    <!-- Requirements -->
+                    <div class="detail-section">
+                        <h3>Requirements</h3>
+                        <ul id="requirements">
+                            <li>Currently pursuing a degree in Computer Science, Software Engineering, or related field</li>
+                            <li>Strong programming skills in at least one language (Java, Python, C++, JavaScript, etc.)</li>
+                            <li>Basic understanding of data structures and algorithms</li>
+                            <li>Familiarity with web technologies (HTML, CSS, JavaScript) is a plus</li>
+                            <li>Good problem-solving skills and attention to detail</li>
+                            <li>Excellent communication and teamwork abilities</li>
+                            <li>Eagerness to learn and grow in a fast-paced environment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Perks -->
+                    <div class="detail-section">
+                        <h3>Perks</h3>
+                        <ul id="perks">
+                            <li>Competitive stipend</li>
+                            <li>Flexible working hours</li>
+                            <li>Mentorship from experienced professionals</li>
+                            <li>Opportunity to work on real-world projects</li>
+                            <li>Certificate of completion</li>
+                            <li>Possibility of pre-placement offer based on performance</li>
+                            <li>Networking opportunities with industry professionals</li>
+                        </ul>
+                    </div>
+
+                    <!-- About Company -->
+                    <div class="detail-section">
+                        <h3>About the Company</h3>
+                        <p id="company-description">Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. It is considered one of the Big Five technology companies alongside Amazon, Apple, Meta, and Microsoft.</p>
+                        <p>Google's mission is to organize the world's information and make it universally accessible and useful. The company has been at the forefront of innovation in artificial intelligence, machine learning, and cloud computing.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column - Apply and Similar Internships -->
+                <div class="col-lg-4">
+                    <div class="sticky-top" style="top: 100px; max-height: calc(100vh - 120px); overflow-y: auto;">
+                        <!-- Apply Section -->
+                        <div class="apply-section mb-4">
+                            <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; color: #333;">Apply for this Internship</h4>
+                            <button class="btn btn-primary apply-btn mb-3">Apply Now</button>
+                            <p class="text-muted small mb-4">Application deadline: <span id="deadline">June 30, 2024</span></p>
+
+                            <div class="key-detail">
+                                <i class="fas fa-users"></i>
+                                <div class="key-detail-text">
+                                    <h5>Number of Openings</h5>
+                                    <p id="openings">5</p>
+                                </div>
+                            </div>
+
+                            <div class="key-detail">
+                                <i class="fas fa-calendar-check"></i>
+                                <div class="key-detail-text">
+                                    <h5>Start Date</h5>
+                                    <p id="start-date">July 15, 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="key-detail">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div class="key-detail-text">
+                                    <h5>Educational Qualification</h5>
+                                    <p id="qualification">Bachelor's/Master's in Computer Science or related field</p>
+                                </div>
+                            </div>
+
+                            <div class="key-detail">
+                                <i class="fas fa-briefcase"></i>
+                                <div class="key-detail-text">
+                                    <h5>Experience Required</h5>
+                                    <p id="experience">No prior experience required</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back Button -->
+                        <div class="mt-4">
+                            <a href="internship.html" class="btn btn-outline-secondary w-100">
+                                <i class="fas fa-arrow-left me-2"></i> Back to Internships
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-logo">InternPortal</h3>
+                    <p>Connecting talented students with top companies for meaningful internship experiences.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>For Students</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Browse Internships</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                        <li><a href="#">Interview Prep</a></li>
+                        <li><a href="#">Career Resources</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>For Employers</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Post Internships</a></li>
+                        <li><a href="#">Employer Dashboard</a></li>
+                        <li><a href="#">Talent Search</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">© 2023 InternPortal. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for students worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for Internship Details -->
+    <script src="js/internship-details.js"></script>
+</body>
+</html>

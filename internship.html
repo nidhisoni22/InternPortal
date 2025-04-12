@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships - InternPortal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for Internship page */
+        .internship-hero {
+            padding: 120px 0 100px;
+            background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #6c757d;
+        }
+
+        .internship-card {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .internship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .internship-card .card-body {
+            padding: 20px;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .internship-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .internship-details {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .detail-item i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .filter-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .filter-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">InternPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="internship.html">Internships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Resume Tips</a></li>
+                            <li><a class="dropdown-item" href="#">Interview Prep</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Career Advice</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-flex social-icons">
+                    <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="internship-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="hero-title mb-3">Find Your Perfect <span class="text-primary">Internship</span></h1>
+                    <p class="hero-subtitle text-muted mb-5">
+                        Discover opportunities that match your skills and interests. Take the first step towards building your career with hands-on experience at top companies.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#internship-listings" class="btn btn-primary px-4 py-2">Browse Internships</a>
+                        <a href="#" class="btn btn-outline-secondary px-4 py-2">For Employers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Listings Section -->
+    <section id="internship-listings" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Column -->
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="filter-section sticky-top" style="top: 100px;">
+                        <h4 class="filter-title">Filter Internships</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Category</label>
+                                <select class="form-select" id="categoryFilter">
+                                    <option selected>All Categories</option>
+                                    <option>Software Development</option>
+                                    <option>Data Science</option>
+                                    <option>Marketing</option>
+                                    <option>Design</option>
+                                    <option>Finance</option>
+                                    <option>Human Resources</option>
+                                    <option>Content Writing</option>
+                                    <option>Research</option>
+                                    <option>Management</option>
+                                    <option>Media</option>
+                                    <option>Science</option>
+                                    <option>Travel</option>
+                                    <option>Healthcare</option>
+                                    <option>Legal</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Location</label>
+                                <select class="form-select" id="locationFilter">
+                                    <option selected>All Locations</option>
+                                    <option>Remote</option>
+                                    <option>Delhi</option>
+                                    <option>Mumbai</option>
+                                    <option>Bangalore</option>
+                                    <option>Hyderabad</option>
+                                    <option>Chennai</option>
+                                    <option>Pune</option>
+                                    <option>Gurgaon</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Duration</label>
+                                <select class="form-select" id="durationFilter">
+                                    <option selected>Any Duration</option>
+                                    <option>1-3 Months</option>
+                                    <option>3-6 Months</option>
+                                    <option>6+ Months</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Stipend Range</label>
+                                <select class="form-select" id="stipendFilter">
+                                    <option selected>Any Stipend</option>
+                                    <option>5,000 - 10,000</option>
+                                    <option>10,000 - 20,000</option>
+                                    <option>20,000+</option>
+                                </select>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="workFromHome">
+                                <label class="form-check-label" for="workFromHome">Work from Home</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Internships Column -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="mb-0">Available Internships</h2>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sort By
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                                <li><a class="dropdown-item" href="#">Newest First</a></li>
+                                <li><a class="dropdown-item" href="#">Stipend: High to Low</a></li>
+                                <li><a class="dropdown-item" href="#">Stipend: Low to High</a></li>
+                                <li><a class="dropdown-item" href="#">Duration: Short to Long</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Internship Cards -->
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-laptop-code text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">Software Development Intern</h5>
+                                    <p class="company-name mb-0">TCS</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bangalore</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>3 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>₹25,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>On-site</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">Join our team to work on cutting-edge technologies and gain hands-on experience in software development. You'll be working with experienced developers on real projects.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="1">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-chart-line text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">Data Science Intern</h5>
+                                    <p class="company-name mb-0">Infosys</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Hyderabad</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>6 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>₹30,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>Hybrid</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">Work with our data science team to analyze large datasets, build predictive models, and extract meaningful insights to drive business decisions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="2">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-bullhorn text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">Digital Marketing Intern</h5>
+                                    <p class="company-name mb-0">Wipro</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Remote</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>4 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>₹15,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>Work from Home</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">Assist in planning and executing digital marketing campaigns, managing social media accounts, and analyzing campaign performance metrics.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="3">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-palette text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">UI/UX Design Intern</h5>
+                                    <p class="company-name mb-0">Tech Mahindra</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bangalore</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>3 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>₹20,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>On-site</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">Create user-centered designs by understanding business requirements, and user feedback. Help create wireframes, storyboards, user flows, and prototypes.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="4">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-money-bill-wave text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">Finance Intern</h5>
+                                    <p class="company-name mb-0">HCL Technologies</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Mumbai</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>6 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>₹35,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>On-site</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">Gain exposure to financial analysis, investment banking, and portfolio management. Work with financial models and assist in preparing client presentations.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="5">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-users text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">Human Resources Intern</h5>
+                                    <p class="company-name mb-0">Cognizant</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Delhi</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>4 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-rupee-sign"></i>
+                                    <span>₹18,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>Hybrid</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">Assist in recruitment processes, employee engagement initiatives, and HR operations. Learn about talent acquisition, performance management, and organizational development.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="6">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="internship.html">1</a></li>
+                            <li class="page-item"><a class="page-link" href="internship-page2.html">2</a></li>
+                            <li class="page-item"><a class="page-link" href="internship-page3.html">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="internship-page2.html">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-logo">InternPortal</h3>
+                    <p>Connecting talented students with top companies for meaningful internship experiences.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>For Students</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Browse Internships</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                        <li><a href="#">Interview Prep</a></li>
+                        <li><a href="#">Career Resources</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>For Employers</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Post Internships</a></li>
+                        <li><a href="#">Employer Dashboard</a></li>
+                        <li><a href="#">Talent Search</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">© 2023 InternPortal. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for students worldwide</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for Internship Functionality -->
+    <script src="js/internship.js"></script>
+</body>
+</html>
