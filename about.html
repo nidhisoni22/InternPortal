@@ -9,15 +9,13 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <style>
         /* Additional styles for About Us page */
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-        }
 
         .about-hero {
             padding: 120px 0 100px;
@@ -157,54 +155,8 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">InternPortal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="internship.html">Internships</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#partners">Partners</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Resume Tips</a></li>
-                            <li><a class="dropdown-item" href="#">Interview Prep</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Career Advice</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
-                </ul>
-                <div class="ms-3 d-flex social-icons">
-                    <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="about-hero">
@@ -259,93 +211,6 @@
                         </div>
                         <h3>Our Values</h3>
                         <p>Integrity, Excellence, Innovation, Inclusivity, and Empowerment form the foundation of everything we do at EmploymentExpress.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <div class="stat-item">
-                        <h2>10,000+</h2>
-                        <p>Placements</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <div class="stat-item">
-                        <h2>500+</h2>
-                        <p>Corporate Partners</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4 mb-md-0">
-                    <div class="stat-item">
-                        <h2>200+</h2>
-                        <p>Educational Institutions</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <h2>50+</h2>
-                        <p>Skill Development Programs</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <div class="position-relative">
-                    <div style="height: 10px; background-color: #c0392b; width: 100%;"></div>
-                    <h2 class="fw-bold position-relative bg-white d-inline-block px-4 mx-auto" style="margin-top: -20px;">AWARDS AND RECOGNITIONS</h2>
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="hexagon-container mx-auto mb-3">
-                                <div class="hexagon d-flex align-items-center justify-content-center" style="background-color: #f8f8f8;">
-                                    <h4 class="m-0" style="color: #c0392b; font-weight: bold;">SiliconIndia</h4>
-                                </div>
-                            </div>
-                            <p class="mb-2">Recognized as "10 most promising recruitment companies in Mumbai-2022"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="hexagon-container mx-auto mb-3">
-                                <div class="hexagon d-flex align-items-center justify-content-center" style="background-color: #f8f8f8;">
-                                    <div>
-                                        <h4 class="m-0" style="color: #c0392b; font-weight: bold;">APAC</h4>
-                                        <p class="small m-0">Business Awards</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mb-2">Awarded as "Best Placements & Skill Development Service Provider- India" Business Awards 2022</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="hexagon-container mx-auto mb-3">
-                                <div class="hexagon d-flex align-items-center justify-content-center" style="background-color: #f8f8f8;">
-                                    <div class="rounded-circle" style="width: 80px; height: 80px; background-color: #fff; border: 2px solid #28a745; display: flex; align-items: center; justify-content: center;">
-                                        <i class="fas fa-home text-success fa-2x"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mb-2">Recognized by Punjab Govt. under the flagship of "Punjab Ghar Ghar Yojana"</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -457,7 +322,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3">
                                 <div class="hexagon">
-                                    <img src="img/aboutUs.jpg" alt="Dr. Nitin Vyas">
+                                    <img src="img/mentors/7.png" alt="Dr. Nitin Vyas">
                                 </div>
                             </div>
                             <h4>Dr. Nitin Vyas</h4>
@@ -470,7 +335,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3">
                                 <div class="hexagon">
-                                    <img src="img/aboutUs.jpg" alt="Vijaybhaskar Annapareddy">
+                                    <img src="img/mentors/5.png" alt="Vijaybhaskar Annapareddy">
                                 </div>
                             </div>
                             <h4>Vijaybhaskar Annapareddy</h4>
@@ -483,7 +348,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3">
                                 <div class="hexagon">
-                                    <img src="img/aboutUs.jpg" alt="Dr. Pankaj Kumar">
+                                    <img src="img/mentors/6.png" alt="Dr. Pankaj Kumar">
                                 </div>
                             </div>
                             <h4>Dr. Pankaj Kumar</h4>
@@ -496,7 +361,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3">
                                 <div class="hexagon">
-                                    <img src="img/aboutUs.jpg" alt="S Vishwanath Naik">
+                                    <img src="img/mentors/2.png" alt="S Vishwanath Naik">
                                 </div>
                             </div>
                             <h4>S Vishwanath Naik</h4>
@@ -509,7 +374,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3">
                                 <div class="hexagon">
-                                    <img src="img/aboutUs.jpg" alt="Gurjant Singh">
+                                    <img src="img/mentors/4.png" alt="Gurjant Singh">
                                 </div>
                             </div>
                             <h4>Gurjant Singh</h4>
@@ -522,7 +387,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3">
                                 <div class="hexagon">
-                                    <img src="img/aboutUs.jpg" alt="Sunil Bhadauriya">
+                                    <img src="img/mentors/3.png" alt="Sunil Bhadauriya">
                                 </div>
                             </div>
                             <h4>Sunil Bhadauriya</h4>
@@ -549,7 +414,7 @@
                         <div class="card-body text-center p-4">
                             <div class="hexagon-container mx-auto mb-3" style="width: 220px; height: 220px;">
                                 <div class="hexagon" style="width: 200px; height: 200px;">
-                                    <img src="img/aboutUs.jpg" alt="Dr. Ankit Sharma">
+                                    <img src="img/mentors/1.png" alt="Dr. Ankit Sharma">
                                 </div>
                             </div>
                             <h3>Dr. Ankit Sharma</h3>
@@ -562,88 +427,14 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mb-4 mb-lg-0">
-                    <h2 class="fw-bold">Ready to transform your career?</h2>
-                    <p class="lead mb-0">Join our programs and take the first step towards a brighter future.</p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="#" class="btn btn-light btn-lg">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-logo">InternPortal</h3>
-                    <p>Connecting talented students with top companies for meaningful internship experiences.</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>For Students</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Browse Internships</a></li>
-                        <li><a href="#">Resume Builder</a></li>
-                        <li><a href="#">Interview Prep</a></li>
-                        <li><a href="#">Career Resources</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>For Employers</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Post Internships</a></li>
-                        <li><a href="#">Employer Dashboard</a></li>
-                        <li><a href="#">Talent Search</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5>Legal</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-4 mb-4">
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">© 2023 InternPortal. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for students worldwide</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Components JS -->
+    <script src="js/components.js"></script>
 </body>
 </html>
