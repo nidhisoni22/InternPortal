@@ -82,36 +82,36 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "Madhab Kafle",
             company: "TCS",
-            image: "https://randomuser.me/api/portraits/men/1.jpg",
-            companyLogo: "path_to_tcs_logo.png",
+            image: "images/testimonials/testimonails1.jpg",
+            companyLogo: "logos/tcs.svg",
             role: "Software Engineer"
         },
         {
-            name: "Athang Kulkarni",
-            company: "Walmart",
-            image: "https://randomuser.me/api/portraits/men/2.jpg",
-            companyLogo: "path_to_walmart_logo.png",
+            name: "Mandeep Hooda",
+            company: "Capgemini",
+            image: "images/testimonials/testimonials2.jpg",
+            companyLogo: "logos/capgemini.svg",
             role: "Data Analyst"
         },
         {
-            name: "Gaurav Poosarla",
+            name: "Naushin Adiba",
             company: "Samsung",
-            image: "https://randomuser.me/api/portraits/men/3.jpg",
-            companyLogo: "path_to_samsung_logo.png",
+            image: "images/testimonials/testimonials5.jpg",
+            companyLogo: "logos/samsung.png",
             role: "Product Manager"
         },
         {
-            name: "Prajwal Shah",
+            name: "Srivalika Iyer",
             company: "Deutsche Bank",
-            image: "https://randomuser.me/api/portraits/men/4.jpg",
-            companyLogo: "path_to_db_logo.png",
+            image: "images/testimonials/testimonials4.jpg",
+            companyLogo: "logos/deutsche.svg",
             role: "Financial Analyst"
         },
         {
             name: "K Sanketh Kumar",
-            company: "EA Sports",
-            image: "https://randomuser.me/api/portraits/men/5.jpg",
-            companyLogo: "path_to_ea_logo.png",
+            company: "EA",
+            image: "images/testimonials/testimonials6.jpg",
+            companyLogo: "logos/ea-games.svg",
             role: "Game Developer"
         }
     ];
