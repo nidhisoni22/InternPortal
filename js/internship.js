@@ -4,9 +4,8 @@ const internships = [
         id: 1,
         title: "Software Development Intern",
         company: "TCS",
-        location: "Bangalore",
+        location: "Delhi",
         duration: "3 Months",
-        stipend: 25000,
         workType: "On-site",
         category: "Software Development",
         description: "Join our team to work on cutting-edge technologies and gain hands-on experience in software development. You'll be working with experienced developers on real projects.",
@@ -16,9 +15,8 @@ const internships = [
         id: 2,
         title: "Data Science Intern",
         company: "Infosys",
-        location: "Hyderabad",
+        location: "Gurgaon",
         duration: "6 Months",
-        stipend: 30000,
         workType: "Hybrid",
         category: "Data Science",
         description: "Work with our data science team to analyze large datasets, build predictive models, and extract meaningful insights to drive business decisions.",
@@ -28,81 +26,74 @@ const internships = [
         id: 3,
         title: "Digital Marketing Intern",
         company: "Wipro",
-        location: "Remote",
+        location: "Delhi",
         duration: "4 Months",
-        stipend: 15000,
-        workType: "Work from Home",
-        category: "Marketing",
+        workType: "Hybrid",
+        category: "Digital Marketing",
         description: "Assist in planning and executing digital marketing campaigns, managing social media accounts, and analyzing campaign performance metrics.",
         icon: "fas fa-bullhorn"
     },
     {
         id: 4,
-        title: "UI/UX Design Intern",
+        title: "Web Development Intern",
         company: "Tech Mahindra",
-        location: "Bangalore",
+        location: "Gurgaon",
         duration: "3 Months",
-        stipend: 20000,
         workType: "On-site",
-        category: "Design",
-        description: "Create user-centered designs by understanding business requirements, and user feedback. Help create wireframes, storyboards, user flows, and prototypes.",
-        icon: "fas fa-palette"
+        category: "Web Development",
+        description: "Create responsive websites and web applications using modern frameworks. Work with front-end and back-end technologies to build user-friendly interfaces.",
+        icon: "fas fa-code"
     },
     {
         id: 5,
-        title: "Finance Intern",
+        title: "Sales and Marketing Intern",
         company: "HCL Technologies",
-        location: "Mumbai",
+        location: "Delhi",
         duration: "6 Months",
-        stipend: 35000,
         workType: "On-site",
-        category: "Finance",
-        description: "Gain exposure to financial analysis, investment banking, and portfolio management. Work with financial models and assist in preparing client presentations.",
-        icon: "fas fa-money-bill-wave"
+        category: "Sales and Marketing",
+        description: "Assist in developing sales strategies, conducting market research, and creating marketing materials. Learn about customer acquisition and relationship management.",
+        icon: "fas fa-bullhorn"
     },
     {
         id: 6,
-        title: "Human Resources Intern",
+        title: "Business Development Intern",
         company: "Cognizant",
         location: "Delhi",
         duration: "4 Months",
-        stipend: 18000,
         workType: "Hybrid",
-        category: "Human Resources",
-        description: "Assist in recruitment processes, employee engagement initiatives, and HR operations. Learn about talent acquisition, performance management, and organizational development.",
+        category: "Business Development",
+        description: "Identify new business opportunities, develop growth strategies, and build relationships with potential clients. Assist in preparing business proposals and presentations.",
         icon: "fas fa-users"
     },
     {
         id: 7,
         title: "Content Writing Intern",
         company: "Netflix",
-        location: "Remote",
+        location: "Gurgaon",
         duration: "3 Months",
-        stipend: 12000,
-        workType: "Work from Home",
+        workType: "Hybrid",
         category: "Content Writing",
         description: "Create engaging content for our blog, social media, and marketing materials. Research industry trends and develop compelling narratives that resonate with our audience.",
         icon: "fas fa-globe"
     },
     {
         id: 8,
-        title: "Research Analyst Intern",
+        title: "Social Media Marketing Intern",
         company: "McKinsey & Company",
-        location: "Chennai",
+        location: "Delhi",
         duration: "6 Months",
-        stipend: 25000,
         workType: "On-site",
-        category: "Research",
-        description: "Conduct market research, analyze data, and prepare reports to support consulting projects. Develop insights that help clients make strategic business decisions.",
-        icon: "fas fa-microscope"
+        category: "Social Media Marketing",
+        description: "Manage social media accounts, create engaging content, and analyze performance metrics. Develop and implement social media strategies to increase brand awareness.",
+        icon: "fas fa-hashtag"
     },
     {
         id: 9,
         title: "Mobile App Developer Intern",
         company: "Swiggy",
-        location: "Bangalore",
+        location: "Gurgaon",
         duration: "4 Months",
-        stipend: 22000,
         workType: "Hybrid",
         category: "Software Development",
         description: "Develop and maintain mobile applications for iOS and Android platforms. Work with cross-functional teams to implement new features and improve user experience.",
@@ -110,27 +101,25 @@ const internships = [
     },
     {
         id: 10,
-        title: "Video Editing Intern",
+        title: "Digital Content Creator Intern",
         company: "YouTube",
-        location: "Remote",
+        location: "Delhi",
         duration: "3 Months",
-        stipend: 15000,
-        workType: "Work from Home",
-        category: "Design",
-        description: "Edit and produce engaging video content for various platforms. Apply creative techniques to enhance visual storytelling and maintain brand consistency.",
+        workType: "Hybrid",
+        category: "Digital Marketing",
+        description: "Create engaging digital content for various platforms. Apply creative techniques to enhance visual storytelling and maintain brand consistency.",
         icon: "fas fa-video"
     },
     {
         id: 11,
-        title: "Project Management Intern",
+        title: "Web Designer Intern",
         company: "Infosys",
-        location: "Pune",
+        location: "Gurgaon",
         duration: "6 Months",
-        stipend: 20000,
         workType: "On-site",
-        category: "Management",
-        description: "Assist project managers in planning, executing, and closing projects. Learn about project management methodologies and tools while supporting team coordination.",
-        icon: "fas fa-project-diagram"
+        category: "Web Development",
+        description: "Design user interfaces for websites and web applications. Create wireframes, mockups, and prototypes to visualize design concepts before implementation.",
+        icon: "fas fa-palette"
     },
     {
         id: 12,
@@ -138,83 +127,10 @@ const internships = [
         company: "Zomato",
         location: "Delhi",
         duration: "4 Months",
-        stipend: 18000,
         workType: "Hybrid",
-        category: "Marketing",
+        category: "Digital Marketing",
         description: "Optimize website content for search engines, conduct keyword research, and implement SEO strategies. Analyze performance metrics and suggest improvements.",
         icon: "fas fa-search-dollar"
-    },
-    {
-        id: 13,
-        title: "Photography Intern",
-        company: "National Geographic",
-        location: "Mumbai",
-        duration: "3 Months",
-        stipend: 15000,
-        workType: "Field Work",
-        category: "Media",
-        description: "Capture compelling images for our publications and digital platforms. Learn advanced photography techniques while documenting stories that matter.",
-        icon: "fas fa-camera"
-    },
-    {
-        id: 14,
-        title: "Artificial Intelligence Intern",
-        company: "NVIDIA",
-        location: "Hyderabad",
-        duration: "6 Months",
-        stipend: 40000,
-        workType: "On-site",
-        category: "Data Science",
-        description: "Develop and implement AI algorithms and models. Work on cutting-edge projects involving machine learning, deep learning, and computer vision.",
-        icon: "fas fa-robot"
-    },
-    {
-        id: 15,
-        title: "Environmental Science Intern",
-        company: "Greenpeace",
-        location: "Delhi",
-        duration: "4 Months",
-        stipend: 12000,
-        workType: "Hybrid",
-        category: "Science",
-        description: "Conduct environmental research, analyze data, and contribute to conservation projects. Help raise awareness about environmental issues through campaigns.",
-        icon: "fas fa-leaf"
-    },
-    {
-        id: 16,
-        title: "Travel & Tourism Intern",
-        company: "MakeMyTrip",
-        location: "Gurgaon",
-        duration: "3 Months",
-        stipend: 18000,
-        workType: "On-site",
-        category: "Travel",
-        description: "Assist in creating travel itineraries, researching destinations, and developing marketing content for travel packages. Learn about the tourism industry.",
-        icon: "fas fa-plane"
-    },
-    {
-        id: 17,
-        title: "Healthcare Management Intern",
-        company: "Apollo Hospitals",
-        location: "Chennai",
-        duration: "6 Months",
-        stipend: 20000,
-        workType: "On-site",
-        category: "Healthcare",
-        description: "Gain exposure to healthcare administration, patient management systems, and hospital operations. Support healthcare professionals in delivering quality care.",
-        icon: "fas fa-heartbeat"
-    },
-    {
-        id: 18,
-        title: "Legal Intern",
-        company: "Cyril Amarchand Mangaldas",
-        location: "Mumbai",
-        duration: "3 Months",
-        stipend: 25000,
-        workType: "On-site",
-        category: "Legal",
-        description: "Assist lawyers in legal research, document preparation, and case management. Gain practical experience in corporate law, intellectual property, and litigation.",
-        icon: "fas fa-gavel"
     }
 ];
 
@@ -424,21 +340,7 @@ function filterInternships() {
             }
         }
 
-        // Stipend filter
-        if (filters.stipendRange !== 'Any Stipend') {
-            if (filters.stipendRange === '5,000 - 10,000' && (internship.stipend < 5000 || internship.stipend > 10000)) {
-                return false;
-            } else if (filters.stipendRange === '10,000 - 20,000' && (internship.stipend < 10000 || internship.stipend > 20000)) {
-                return false;
-            } else if (filters.stipendRange === '20,000+' && internship.stipend < 20000) {
-                return false;
-            }
-        }
-
-        // Work from home filter
-        if (filters.workFromHome && internship.workType !== 'Work from Home') {
-            return false;
-        }
+        // Stipend filter and Work from home filter removed
 
         return true;
     });
@@ -557,10 +459,6 @@ function createInternshipCard(internship) {
                 <div class="detail-item">
                     <i class="fas fa-calendar-alt"></i>
                     <span>${internship.duration}</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-rupee-sign"></i>
-                    <span>₹${internship.stipend.toLocaleString()}/month</span>
                 </div>
                 <div class="detail-item">
                     <i class="fas fa-home"></i>
