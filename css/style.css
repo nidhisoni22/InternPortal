@@ -23,6 +23,9 @@ body {
     color: var(--dark-color);
     overflow-x: hidden;
     padding-top: 76px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -851,6 +854,36 @@ a:hover {
 
 hr {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Container Fix */
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.container, .container-fluid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Fix for extra space on right side */
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Additional fix for any potential overflow */
+* {
+    box-sizing: border-box;
 }
 
 /* Responsive Styles */

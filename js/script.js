@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.classList.add('shadow-sm');
-            navbar.style.padding = '0.5rem 0';
+            navbar.classList.add('scrolled');
+            navbar.style.padding = '10px 0';
         } else {
-            navbar.classList.remove('shadow-sm');
-            navbar.style.padding = '1rem 0';
+            navbar.classList.remove('scrolled');
+            navbar.style.padding = '20px 0';
         }
     });
 
@@ -82,36 +82,36 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             name: "Madhab Kafle",
             company: "TCS",
-            image: "images/testimonials/testimonails1.jpg",
-            companyLogo: "logos/tcs.svg",
+            image: "img/testimonials/testimonails1.jpg",
+            companyLogo: "img/logos/tcs.svg",
             role: "Software Engineer"
         },
         {
             name: "Mandeep Hooda",
             company: "Capgemini",
-            image: "images/testimonials/testimonials2.jpg",
-            companyLogo: "logos/capgemini.svg",
+            image: "img/testimonials/testimonials2.jpg",
+            companyLogo: "img/logos/capgemini.svg",
             role: "Data Analyst"
         },
         {
             name: "Naushin Adiba",
             company: "Samsung",
-            image: "images/testimonials/testimonials5.jpg",
-            companyLogo: "logos/samsung.png",
+            image: "img/testimonials/testimonials5.jpg",
+            companyLogo: "img/logos/samsung.png",
             role: "Product Manager"
         },
         {
             name: "Srivalika Iyer",
             company: "Deutsche Bank",
-            image: "images/testimonials/testimonials4.jpg",
-            companyLogo: "logos/deutsche.svg",
+            image: "img/testimonials/testimonials4.jpg",
+            companyLogo: "img/logos/deutsche.svg",
             role: "Financial Analyst"
         },
         {
             name: "K Sanketh Kumar",
             company: "EA",
-            image: "images/testimonials/testimonials6.jpg",
-            companyLogo: "logos/ea-games.svg",
+            image: "img/testimonials/testimonials6.jpg",
+            companyLogo: "img/logos/ea-games.svg",
             role: "Game Developer"
         }
     ];

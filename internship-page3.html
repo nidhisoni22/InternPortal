@@ -15,7 +15,7 @@
     <style>
         /* Additional styles for Internship page */
         .internship-hero {
-            padding: 120px 0 100px;
+            padding: 80px 0 100px;
             background-color: #f8f9fa;
             position: relative;
             overflow: hidden;
@@ -108,57 +108,11 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">InternPortal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="internship.html">Internships</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#partners">Partners</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Resume Tips</a></li>
-                            <li><a class="dropdown-item" href="#">Interview Prep</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Career Advice</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
-                </ul>
-                <div class="ms-3 d-flex social-icons">
-                    <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
     <!-- Internship Listings Section -->
-    <section id="internship-listings" class="py-5 bg-light" style="margin-top: 76px;">
+    <section id="internship-listings" class="py-5 bg-light" style="margin-top: 0;">
         <div class="container">
             <div class="row">
                 <!-- Filters Column -->
@@ -486,74 +440,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-logo">InternPortal</h3>
-                    <p>Connecting talented students with top companies for meaningful internship experiences.</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>For Students</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Browse Internships</a></li>
-                        <li><a href="#">Resume Builder</a></li>
-                        <li><a href="#">Interview Prep</a></li>
-                        <li><a href="#">Career Resources</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>For Employers</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Post Internships</a></li>
-                        <li><a href="#">Employer Dashboard</a></li>
-                        <li><a href="#">Talent Search</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5>Legal</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-4 mb-4">
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">© 2023 InternPortal. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for students worldwide</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Components JS -->
+     <script src="js/components.js"></script>
     <!-- Custom JS for Internship Functionality -->
     <script src="js/internship.js"></script>
 </body>

@@ -2,7 +2,7 @@
 
 /* Contact Hero Section */
 .contact-hero {
-    padding: 8rem 0 4rem;
+    padding: 5rem 0 4rem;
     background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
     position: relative;
     overflow: hidden;
