@@ -184,14 +184,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Insert navbar HTML
     document.getElementById('navbar-container').innerHTML = `
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent; box-shadow: none; display: block !important;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent; box-shadow: none; display: block !important;" id="mainNavbar">
         <div class="container d-flex justify-content-center">
             <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: #ffffff; border-radius: 50px; padding: 12px 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); width: 95%; max-width: 1140px; display: flex !important;">
             <a class="navbar-brand fw-bold" href="index.html">InternPortal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav" aria-labelledby="navbarToggler">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link" id="nav-home" href="index.html">Home</a>
@@ -295,14 +295,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ensure Bootstrap's collapse functionality works properly
     setTimeout(() => {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        if (navbarToggler) {
-            navbarToggler.addEventListener('click', function() {
-                const navbarCollapse = document.getElementById('navbarNav');
-                if (navbarCollapse) {
-                    navbarCollapse.classList.toggle('show');
+        // Make sure Bootstrap is loaded
+        if (typeof bootstrap !== 'undefined') {
+            // Initialize all collapse elements
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse) {
+                // Create a collapse instance
+                const collapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+
+                // Add event listener to close the menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+
+                    if (navbarCollapse.classList.contains('show') &&
+                        !navbarCollapse.contains(e.target) &&
+                        !navbarToggler.contains(e.target)) {
+                        collapse.hide();
+
+                        // Update aria-expanded attribute
+                        if (navbarToggler) {
+                            navbarToggler.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+
+                // Fix for mobile menu toggle not working
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                if (navbarToggler) {
+                    navbarToggler.addEventListener('click', function() {
+                        collapse.toggle();
+                    });
                 }
-            });
+            }
+        } else {
+            console.warn('Bootstrap is not loaded. Navbar toggle may not work properly.');
+
+            // Fallback for when Bootstrap is not loaded
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            if (navbarToggler) {
+                navbarToggler.addEventListener('click', function() {
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse) {
+                        navbarCollapse.classList.toggle('show');
+                        const expanded = navbarToggler.getAttribute('aria-expanded') === 'true' || false;
+                        navbarToggler.setAttribute('aria-expanded', !expanded);
+                    }
+                });
+            }
         }
 
         // Add fixed positioning to navbar
