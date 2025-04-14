@@ -148,9 +148,7 @@ if (urlParams.has('page')) {
 let filters = {
     category: 'All Categories',
     location: 'All Locations',
-    duration: 'Any Duration',
-    stipendRange: 'Any Stipend',
-    workFromHome: false
+    duration: 'Any Duration'
 };
 
 let sortBy = 'Newest First';
@@ -184,8 +182,6 @@ function loadFilterState() {
     document.getElementById('categoryFilter').value = filters.category;
     document.getElementById('locationFilter').value = filters.location;
     document.getElementById('durationFilter').value = filters.duration;
-    document.getElementById('stipendFilter').value = filters.stipendRange;
-    document.getElementById('workFromHome').checked = filters.workFromHome;
 
     // Set sort dropdown value
     if (urlParams.has('sort')) {
@@ -225,15 +221,7 @@ function setupFilterListeners() {
                 filters.duration = durationFilter.value;
             }
 
-            const stipendFilter = document.getElementById('stipendFilter');
-            if (stipendFilter) {
-                filters.stipendRange = stipendFilter.value;
-            }
-
-            const workFromHomeCheckbox = document.getElementById('workFromHome');
-            if (workFromHomeCheckbox) {
-                filters.workFromHome = workFromHomeCheckbox.checked;
-            }
+            // Stipend and work from home filters removed
 
             // Save filter state and navigate to page 1
             saveFilterState();
@@ -287,13 +275,7 @@ function navigateToPage(page) {
         queryParams.set('duration', filters.duration);
     }
 
-    if (filters.stipendRange !== 'Any Stipend') {
-        queryParams.set('stipend', filters.stipendRange);
-    }
-
-    if (filters.workFromHome) {
-        queryParams.set('wfh', 'true');
-    }
+    // Stipend and work from home filters removed
 
     if (sortBy !== 'Newest First') {
         queryParams.set('sort', sortBy);
@@ -320,12 +302,8 @@ function filterInternships() {
         }
 
         // Location filter
-        if (filters.location !== 'All Locations') {
-            if (filters.location === 'Remote' && internship.workType !== 'Work from Home') {
-                return false;
-            } else if (filters.location !== 'Remote' && internship.location !== filters.location) {
-                return false;
-            }
+        if (filters.location !== 'All Locations' && internship.location !== filters.location) {
+            return false;
         }
 
         // Duration filter
@@ -351,12 +329,10 @@ function sortInternships(filteredInternships) {
     return filteredInternships.sort((a, b) => {
         if (sortBy === 'Newest First') {
             return b.id - a.id; // Assuming newer internships have higher IDs
-        } else if (sortBy === 'Stipend: High to Low') {
-            return b.stipend - a.stipend;
-        } else if (sortBy === 'Stipend: Low to High') {
-            return a.stipend - b.stipend;
         } else if (sortBy === 'Duration: Short to Long') {
             return parseInt(a.duration) - parseInt(b.duration);
+        } else if (sortBy === 'Location: A to Z') {
+            return a.location.localeCompare(b.location);
         }
         return 0;
     });
@@ -374,9 +350,7 @@ function displayInternships() {
     const hasFilters = (
         filters.category !== 'All Categories' ||
         filters.location !== 'All Locations' ||
-        filters.duration !== 'Any Duration' ||
-        filters.stipendRange !== 'Any Stipend' ||
-        filters.workFromHome
+        filters.duration !== 'Any Duration'
     );
 
     // If filters are applied or sort is changed, filter and sort all internships
