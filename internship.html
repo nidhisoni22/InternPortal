@@ -41,97 +41,173 @@
             color: #6c757d;
         }
 
-        .certificate-showcase {
+        /* Certificate Slider Styles */
+        .certificate-slider-container {
             position: relative;
-            margin-top: 50px;
-            height: 300px;
-            width: 100%;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 20px;
-            background: linear-gradient(to bottom, rgba(240,240,240,0.1), rgba(240,240,240,0.3), rgba(240,240,240,0.1));
-            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px 0;
+            height: 320px;
         }
 
-        .certificate-item {
-            position: absolute;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-            overflow: hidden;
-            width: 250px;
+        .certificate-slider {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            padding: 20px 0;
+        }
+
+        .certificate-slider .swiper-slide {
+            width: 320px;
             height: auto;
-            background-color: white;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            transform: scale(0.85) translateZ(-100px);
+            filter: blur(1px);
+            perspective: 1000px;
+        }
+
+        .certificate-slider .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1) translateZ(0);
+            z-index: 2;
+            filter: blur(0);
+        }
+
+        .certificate-slider .swiper-slide-prev,
+        .certificate-slider .swiper-slide-next {
+            opacity: 0.8;
+            transform: scale(0.9) translateZ(-50px);
+            filter: blur(0.5px);
+        }
+
+        .certificate-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
             padding: 8px;
             border: 1px solid #eaeaea;
         }
 
-        .certificate-item img {
+        .certificate-card img {
             width: 100%;
             height: auto;
-            object-fit: cover;
-            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s;
+            border-radius: 8px;
         }
 
-        /* Certificate hover effect */
-        .certificate-item:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            z-index: 10;
+        .certificate-card:hover img {
+            transform: scale(1.02);
         }
 
-        .certificate-item:nth-child(1) {
-            left: 20%;
-            top: 30px;
-            transform: translateX(-50%) rotate(-8deg);
-            z-index: 1;
-        }
-
-        .certificate-item:nth-child(2) {
-            left: 35%;
-            top: 15px;
-            transform: translateX(-50%) rotate(-4deg);
-            z-index: 2;
-        }
-
-        .certificate-item:nth-child(3) {
-            left: 50%;
-            top: 10px;
-            transform: translateX(-50%);
-            z-index: 5;
-        }
-
-        .certificate-item:nth-child(4) {
-            left: 65%;
-            top: 15px;
-            transform: translateX(-50%) rotate(4deg);
-            z-index: 2;
-        }
-
-        .certificate-item:nth-child(5) {
-            left: 80%;
-            top: 30px;
-            transform: translateX(-50%) rotate(8deg);
-            z-index: 1;
-        }
-
-
-
-        .certificate-badge {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #ff5722, #ff9800);
-            color: white;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
+        .certificate-navigation {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .certificate-button-prev,
+        .certificate-button-next {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            color: var(--primary-color);
+            z-index: 10;
+        }
+
+        .certificate-button-prev:hover,
+        .certificate-button-next:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .certificate-pagination {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .certificate-pagination .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background-color: #ccc;
+            opacity: 0.7;
+            margin: 0 4px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .certificate-pagination .swiper-pagination-bullet-active {
+            background-color: var(--primary-color);
+            opacity: 1;
+            width: 10px;
+            height: 10px;
+        }
+
+        .certificate-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #ff5722, #ff9800);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             border: 2px solid white;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .certificate-slider-container {
+                height: 280px;
+            }
+            .certificate-slider .swiper-slide {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certificate-slider-container {
+                height: 250px;
+            }
+            .certificate-slider .swiper-slide {
+                width: 240px;
+            }
+
+            .certificate-button-prev,
+            .certificate-button-next {
+                width: 30px;
+                height: 30px;
+            }
+
+            .certificate-badge {
+                width: 25px;
+                height: 25px;
+                font-size: 0.8rem;
+            }
         }
 
         .internship-card {
@@ -226,36 +302,57 @@
                     <!-- Certificate Showcase -->
                     <h4 class="text-center mb-4">Our Interns Receive Recognized Certificates</h4>
                     <p class="text-center text-muted">Partnered with 450+ international certification providers including Microsoft, Apple, IBM, HP, Autodesk, IIT & ISB</p>
-                    <div class="certificate-showcase mt-5">
-                        <div class="certificate-item">
-                            <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.24.58_f45d5326.jpg" alt="Certificate of Excellence">
-                            <div class="certificate-badge">
-                                <i class="fas fa-award"></i>
+                    <div class="certificate-slider-container mt-5">
+                        <div class="swiper certificate-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="certificate-card">
+                                        <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.24.58_f45d5326.jpg" alt="Certificate of Excellence">
+                                        <div class="certificate-badge">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="certificate-card">
+                                        <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.24.35_24ba9887.jpg" alt="Certificate of Completion">
+                                        <div class="certificate-badge">
+                                            <i class="fas fa-certificate"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="certificate-card">
+                                        <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.24.20_28ce8cc4.jpg" alt="Certificate of Achievement">
+                                        <div class="certificate-badge">
+                                            <i class="fas fa-medal"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="certificate-card">
+                                        <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.23.54_d6976439.jpg" alt="Certificate of Recognition">
+                                        <div class="certificate-badge">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="certificate-card">
+                                        <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.23.10_9718deee.jpg" alt="Certificate of Merit">
+                                        <div class="certificate-badge">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- Add pagination -->
+                            <div class="swiper-pagination certificate-pagination"></div>
                         </div>
-                        <div class="certificate-item">
-                            <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.24.35_24ba9887.jpg" alt="Certificate of Completion">
-                            <div class="certificate-badge">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                        </div>
-                        <div class="certificate-item">
-                            <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.24.20_28ce8cc4.jpg" alt="Certificate of Achievement">
-                            <div class="certificate-badge">
-                                <i class="fas fa-medal"></i>
-                            </div>
-                        </div>
-                        <div class="certificate-item">
-                            <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.23.54_d6976439.jpg" alt="Certificate of Recognition">
-                            <div class="certificate-badge">
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="certificate-item">
-                            <img src="img/certificates/WhatsApp Image 2025-04-12 at 18.23.10_9718deee.jpg" alt="Certificate of Merit">
-                            <div class="certificate-badge">
-                                <i class="fas fa-trophy"></i>
-                            </div>
+                        <!-- Add navigation buttons -->
+                        <div class="certificate-navigation">
+                            <div class="certificate-button-prev"><i class="fas fa-chevron-left"></i></div>
+                            <div class="certificate-button-next"><i class="fas fa-chevron-right"></i></div>
                         </div>
                     </div>
                 </div>
@@ -280,10 +377,12 @@
                                     <option>Web Development</option>
                                     <option>Data Science</option>
                                     <option>Software Development</option>
-                                    <option>Sales and Marketing</option>
+                                    <option>Cybersecurity</option>
+                                    <option>Product Management</option>
                                     <option>Content Writing</option>
                                     <option>Social Media Marketing</option>
                                     <option>Business Development</option>
+                                    <option>Artificial Intelligence</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -366,7 +465,7 @@
                                     <i class="fas fa-chart-line text-primary fs-4"></i>
                                 </div>
                                 <div>
-                                    <h5 class="internship-title">Data Science Intern</h5>
+                                    <h5 class="internship-title">Data Science / AI Specialist Intern</h5>
                                     <p class="company-name mb-0">Infosys</p>
                                 </div>
                             </div>
@@ -384,7 +483,7 @@
                                     <span>Hybrid</span>
                                 </div>
                             </div>
-                            <p class="mb-3">Work with our data science team to analyze large datasets, build predictive models, and extract meaningful insights to drive business decisions.</p>
+                            <p class="mb-3">Is designed for individuals passionate about leveraging data to extract insights, build models, and develop intelligent solutions. This role blends analytical skills with programming and machine learning knowledge to support business decisions, predictive modeling, and automation.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-success">Actively Hiring</span>
                                 <a href="#" class="btn btn-outline-primary" data-id="2">View Details</a>
@@ -429,10 +528,10 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-light rounded-circle p-3 me-3">
-                                    <i class="fas fa-code text-primary fs-4"></i>
+                                    <i class="fas fa-tasks text-primary fs-4"></i>
                                 </div>
                                 <div>
-                                    <h5 class="internship-title">Web Development Intern</h5>
+                                    <h5 class="internship-title">Product Manager Intern</h5>
                                     <p class="company-name mb-0">Tech Mahindra</p>
                                 </div>
                             </div>
@@ -450,7 +549,7 @@
                                     <span>On-site</span>
                                 </div>
                             </div>
-                            <p class="mb-3">Create responsive websites and web applications using modern frameworks. Work with front-end and back-end technologies to build user-friendly interfaces.</p>
+                            <p class="mb-3">A Product Manager Internship provides hands-on experience in managing the lifecycle of a product, from ideation to launch and iteration. Interns in this role support product planning, market research, stakeholder communication, and cross-functional team collaboration. This internship prepares you to be at the intersection of business, technology, and user experience, driving the development of products that meet customer needs and business objectives.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-success">Actively Hiring</span>
                                 <a href="#" class="btn btn-outline-primary" data-id="4">View Details</a>
@@ -462,10 +561,10 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-light rounded-circle p-3 me-3">
-                                    <i class="fas fa-bullhorn text-primary fs-4"></i>
+                                    <i class="fas fa-shield-alt text-primary fs-4"></i>
                                 </div>
                                 <div>
-                                    <h5 class="internship-title">Sales and Marketing Intern</h5>
+                                    <h5 class="internship-title">Cybersecurity Specialist Intern</h5>
                                     <p class="company-name mb-0">HCL Technologies</p>
                                 </div>
                             </div>
@@ -483,7 +582,7 @@
                                     <span>On-site</span>
                                 </div>
                             </div>
-                            <p class="mb-3">Assist in developing sales strategies, conducting market research, and creating marketing materials. Learn about customer acquisition and relationship management.</p>
+                            <p class="mb-3">A Cybersecurity Specialist Internship provides a deep dive into protecting organizations from digital threats and vulnerabilities. Interns assist in identifying, analyzing, and responding to security risks, as well as developing strategies to safeguard networks, systems, and data. This internship prepares you for real-world cybersecurity challenges, from penetration testing to security policy management.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-success">Actively Hiring</span>
                                 <a href="#" class="btn btn-outline-primary" data-id="5">View Details</a>
@@ -520,6 +619,39 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-success">Actively Hiring</span>
                                 <a href="#" class="btn btn-outline-primary" data-id="6">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="internship-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-light rounded-circle p-3 me-3">
+                                    <i class="fas fa-robot text-primary fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="internship-title">Artificial Intelligence (AI) Engineer Intern</h5>
+                                    <p class="company-name mb-0">Microsoft</p>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Gurgaon</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>6 Months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span>Hybrid</span>
+                                </div>
+                            </div>
+                            <p class="mb-3">An AI Engineer Internship is ideal for students or early professionals eager to dive deep into artificial intelligence, machine learning, and deep learning. Interns in this role assist in developing, training, and deploying intelligent systems that solve real-world problems.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Actively Hiring</span>
+                                <a href="#" class="btn btn-outline-primary" data-id="7">View Details</a>
                             </div>
                         </div>
                     </div>

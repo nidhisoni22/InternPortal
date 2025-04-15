@@ -164,4 +164,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call the populate function
     populateTestimonials();
+
+    // Initialize Certificate Slider
+    var certificateSlider = new Swiper(".certificate-slider", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".certificate-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '"></span>';
+            },
+        },
+        navigation: {
+            nextEl: ".certificate-button-next",
+            prevEl: ".certificate-button-prev",
+        },
+        breakpoints: {
+            320: {
+                spaceBetween: 20,
+            },
+            768: {
+                spaceBetween: 30,
+            },
+        },
+    });
 });

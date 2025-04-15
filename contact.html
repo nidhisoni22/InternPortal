@@ -97,19 +97,23 @@
                 <div class="col-lg-8">
                     <div class="contact-form-container">
                         <h3 class="mb-4">Send Us a Message</h3>
-                        <form id="contactForm" class="contact-form">
+                        <form id="contactForm" class="contact-form" action="https://formsubmit.co/career@employementexpress.net" method="POST">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission from InternPortal">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-select" id="subject" required>
+                                    <select class="form-select" id="subject" name="subject" required>
                                         <option value="" selected disabled>Select a subject</option>
                                         <option value="General Inquiry">General Inquiry</option>
                                         <option value="Internship Application">Internship Application</option>
@@ -119,8 +123,9 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control" id="message" placeholder="Your Message" style="height: 120px" required></textarea>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 120px" required></textarea>
                                 </div>
+                                <!-- Form submission is handled by JavaScript -->
                                 <div class="col-12 mt-2">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="privacyPolicy" required>
@@ -142,6 +147,25 @@
             </div>
         </div>
     </section>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="modal-title mb-3" id="successModalLabel">Message Sent Successfully!</h3>
+                    <p class="mb-4">Thank you for contacting us. Your message has been sent to <strong>career@employementexpress.net</strong>. We will get back to you soon.</p>
+                    <button type="button" class="btn btn-primary px-4 py-2 mt-3" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- FAQ Section -->
@@ -242,6 +266,6 @@
     <script src="js/components.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/contact-formsubmit.js"></script>
 </body>
 </html>
