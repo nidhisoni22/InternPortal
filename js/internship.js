@@ -741,8 +741,17 @@ function navigateToPage(page) {
 function filterInternships() {
     return internships.filter(internship => {
         // Category filter
-        if (filters.category !== 'All Categories' && internship.category !== filters.category) {
-            return false;
+        if (filters.category !== 'All Categories') {
+            // Handle consolidated categories
+            if (filters.category === 'Digital Marketing' &&
+                (internship.category === 'Digital Marketing' || internship.category === 'Social Media Marketing')) {
+                // Allow both Digital Marketing and Social Media Marketing when Digital Marketing is selected
+            } else if (filters.category === 'Finance' &&
+                      (internship.category === 'Finance' || internship.category === 'Accounting')) {
+                // Allow both Finance and Accounting when Finance is selected
+            } else if (internship.category !== filters.category) {
+                return false;
+            }
         }
 
         // Location filter
