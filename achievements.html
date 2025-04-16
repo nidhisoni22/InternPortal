@@ -47,7 +47,7 @@
 
         .hero-section {
             background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%);
-            padding: 100px 0 80px;
+            padding: 120px 0;
             position: relative;
             overflow: hidden;
         }
@@ -59,20 +59,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(#e9ecef 1px, transparent 1px), radial-gradient(#e9ecef 1px, transparent 1px);
+            background-image: radial-gradient(#e9ecef 1px, transparent 1px);
             background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            opacity: 0.5;
+            opacity: 0.4;
             animation: pulse 10s infinite alternate;
         }
 
-        @keyframes pulse {
-            0% {
-                opacity: 0.3;
-            }
-            100% {
-                opacity: 0.6;
-            }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#e9ecef 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.4;
+            animation: pulse 10s infinite alternate;
         }
 
         .hero-content {
@@ -93,11 +96,16 @@
         }
 
         .hero-title {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            color: var(--dark-color);
-            background: linear-gradient(135deg, var(--primary-color), #4361ee);
+            color: #333;
+            text-align: left;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0d6efd, #4361ee);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -106,32 +114,148 @@
 
         .hero-subtitle {
             font-size: 1.25rem;
-            max-width: 700px;
+            line-height: 1.8;
+            color: #6c757d;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .custom-btn {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0d6efd, #4361ee);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+        }
+
+        .btn-outline {
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            background: transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 110, 253, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, #0d6efd, #4361ee);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .award-image-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
             margin: 0 auto;
-            color: #495057;
-            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 80px 0 60px;
-            }
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            .hero-subtitle {
-                font-size: 1.1rem;
-                padding: 0 15px;
-            }
+        .award-main-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
+            border: 8px solid white;
+            background: white;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
         }
 
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            .hero-subtitle {
-                font-size: 1rem;
-            }
+        .award-main-image:hover {
+            transform: scale(1.05);
+        }
+
+        .award-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0d6efd, #4361ee);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+            border: 4px solid white;
+            z-index: 3;
+            animation: pulse 2s infinite;
+        }
+
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            background: linear-gradient(135deg, #0d6efd, #4361ee);
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            top: -30px;
+            left: -30px;
+            animation: float 6s infinite alternate;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 20px;
+            right: 20px;
+            animation: float 4s infinite alternate-reverse;
+        }
+
+        .circle-3 {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            right: -20px;
+            animation: float 5s infinite alternate;
+        }
+
+        .award-badge-text {
+            background: linear-gradient(135deg, #0d6efd, #4361ee);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .awards-section {
@@ -192,9 +316,17 @@
             position: relative;
         }
 
+        .award-card-link {
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
         .award-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
 
         .award-image {
@@ -763,6 +895,36 @@
         }
 
 
+        /* Government image styles */
+        .govt-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .govt-full-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .govt-full-image {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 767px) {
+            .govt-image-container {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .govt-image-container {
+                height: 150px;
+            }
+        }
     </style>
 </head>
 
@@ -774,31 +936,236 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center hero-content">
-                    <div class="mb-4">
-                        <span class="badge px-3 py-2 rounded-pill mb-3" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white; font-size: 0.9rem; font-weight: 500; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2); letter-spacing: 0.5px;">APAC INSIDER BUSINESS AWARDS</span>
-                    </div>
-                    <h1 class="hero-title">Award-Winning Excellence</h1>
-                    <p class="hero-subtitle">Recognized as the Best Employment Training Support Business 2024 - India and Investment Banking Services Excellence Award 2024</p>
-                    <div class="mt-5">
-                        <div class="d-flex justify-content-center">
-                            <div class="position-relative" style="animation: float 3s ease-in-out infinite;">
-                                <img src="img/awards/9.png" alt="APAC Insider Award" class="img-fluid rounded-circle" style="width: 100px; height: 100px; object-fit: cover; border: 4px solid white; box-shadow: 0 10px 25px rgba(13, 110, 253, 0.2);">
-                                <div class="position-absolute" style="top: -10px; right: -10px; background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid white;">
-                                    <i class="fas fa-trophy" style="font-size: 0.8rem;"></i>
-                                </div>
+            <div class="row align-items-center">
+                <!-- Left Column - Award Image -->
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="position-relative" style="animation: float 3s ease-in-out infinite;">
+                        <div class="award-image-container">
+                            <img src="img/awards/9.png" alt="APAC Insider Award" class="img-fluid award-main-image">
+                            <div class="award-badge">
+                                <i class="fas fa-trophy"></i>
                             </div>
+                            <!-- Decorative Elements -->
+                            <div class="decoration-circle circle-1"></div>
+                            <div class="decoration-circle circle-2"></div>
+                            <div class="decoration-circle circle-3"></div>
                         </div>
+                    </div>
+                </div>
+                <!-- Right Column - Text Content -->
+                <div class="col-lg-7 hero-content">
+                    <div class="award-badge-container mb-4 text-center text-lg-start">
+                        <span class="award-badge-text">
+                            <i class="fas fa-star me-2"></i>
+                            APAC INSIDER BUSINESS AWARDS
+                        </span>
+                    </div>
+                    <h1 class="hero-title mb-4 text-center text-lg-start">Award-Winning <br><span class="gradient-text">Excellence</span></h1>
+                    <p class="hero-subtitle text-center text-lg-start mx-auto mx-lg-0">Recognized as the Best Employment Training Support Business 2024 - India and Investment Banking Services Excellence Award 2024</p>
+                    <div class="mt-5 d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#awards-section" class="custom-btn btn-primary">View Awards</a>
+                        <a href="#awards-section" class="custom-btn btn-outline">Our Achievements</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <style>
-            @keyframes float {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-                100% { transform: translateY(0px); }
+            .hero-section {
+                background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%);
+                padding: 120px 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: radial-gradient(#e9ecef 1px, transparent 1px);
+                background-size: 20px 20px;
+                opacity: 0.4;
+                animation: pulse 10s infinite alternate;
+            }
+
+            .award-image-container {
+                position: relative;
+                width: 400px;
+                height: 400px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .award-main-image {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 50%; /* Changed from 20px to 50% for circular shape */
+                box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
+                border: 8px solid white;
+                background: white;
+                position: relative;
+                z-index: 2;
+                transition: transform 0.3s ease;
+            }
+
+            .award-main-image:hover {
+                transform: scale(1.05);
+            }
+
+            .award-badge {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #0d6efd, #4361ee);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.5rem;
+                box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+                border: 4px solid white;
+                z-index: 3;
+                animation: pulse 2s infinite;
+            }
+
+            .decoration-circle {
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.1;
+                background: linear-gradient(135deg, #0d6efd, #4361ee);
+            }
+
+            .circle-1 {
+                width: 200px;
+                height: 200px;
+                top: -30px;
+                left: -30px;
+                animation: float 6s infinite alternate;
+            }
+
+            .circle-2 {
+                width: 150px;
+                height: 150px;
+                bottom: 20px;
+                right: 20px;
+                animation: float 4s infinite alternate-reverse;
+            }
+
+            .circle-3 {
+                width: 100px;
+                height: 100px;
+                top: 50%;
+                right: -20px;
+                animation: float 5s infinite alternate;
+            }
+
+            .award-badge-text {
+                background: linear-gradient(135deg, #0d6efd, #4361ee);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 30px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                letter-spacing: 1px;
+                box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+                font-weight: 800;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+                color: #333;
+            }
+
+            .gradient-text {
+                background: linear-gradient(135deg, #0d6efd, #4361ee);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+                line-height: 1.8;
+                color: #6c757d;
+                margin-bottom: 2rem;
+                max-width: 600px;
+            }
+
+            .custom-btn {
+                padding: 15px 30px;
+                border-radius: 30px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+                min-width: 180px;
+                text-align: center;
+            }
+
+            @media (max-width: 991px) {
+                .hero-section {
+                    padding: 80px 0;
+                }
+
+                .award-image-container {
+                    width: 300px;
+                    height: 300px;
+                    margin: 0 auto 40px;
+                }
+
+                .award-main-image {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .hero-title {
+                    font-size: 3rem;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .award-image-container {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .award-main-image {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.1rem;
+                }
+
+                .mt-5.d-flex {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .custom-btn {
+                    width: 100%;
+                    max-width: 280px;
+                    margin-bottom: 10px;
+                }
             }
         </style>
     </section>
@@ -810,97 +1177,107 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="award-card">
-                        <div class="award-image">
-                            <img src="img/awards/8.png" alt="Silicon India Recognition">
-                        </div>
-                        <div class="award-content">
-                            <h4 class="award-title">Silicon India Magazine</h4>
-                            <h5 class="award-subtitle">10 Most Promising Recruitment Companies in Mumbai - 2022</h5>
-                            <p class="award-description">Recognized for our initiative of Unemployment-Free India and being one of the most promising recruitment companies in Mumbai.</p>
-                            <div class="award-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>2022</span>
+                        <a href="https://industry.siliconindia.com/vendor/employment-express-marching-forward-with-the-initiative-of-unemploymentfree-india-cid-16922.html" class="award-card-link">
+                            <div class="award-image">
+                                <img src="img/awards/8.png" alt="Silicon India Recognition">
                             </div>
-                            <div class="achievement-badge">
-                                <i class="fas fa-star"></i>
+                            <div class="award-content">
+                                <h4 class="award-title">Silicon India Magazine</h4>
+                                <h5 class="award-subtitle">10 Most Promising Recruitment Companies in Mumbai - 2022</h5>
+                                <p class="award-description">Recognized for our initiative of Unemployment-Free India and being one of the most promising recruitment companies in Mumbai.</p>
+                                <div class="award-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>2022</span>
+                                </div>
+                                <div class="achievement-badge">
+                                    <i class="fas fa-star"></i>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="award-card">
-                        <div class="award-image">
-                            <img src="img/awards/9.png" alt="APAC Business Awards 2022">
-                        </div>
-                        <div class="award-content">
-                            <h4 class="award-title">APAC Business Awards 2022</h4>
-                            <h5 class="award-subtitle">Best Placement & Skill Development Service Provider - India</h5>
-                            <p class="award-description">Recognized for our dedication to skill development and placement services across India.</p>
-                            <div class="award-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>2022</span>
+                        <a href="https://apacinsider.digital/winners/employment-express-verband-llp/" class="award-card-link">
+                            <div class="award-image">
+                                <img src="img/awards/9.png" alt="APAC Business Awards 2022">
                             </div>
-                            <div class="achievement-badge">
-                                <i class="fas fa-trophy"></i>
+                            <div class="award-content">
+                                <h4 class="award-title">APAC Business Awards 2022</h4>
+                                <h5 class="award-subtitle">Best Placement & Skill Development Service Provider - India</h5>
+                                <p class="award-description">Recognized for our dedication to skill development and placement services across India.</p>
+                                <div class="award-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>2022</span>
+                                </div>
+                                <div class="achievement-badge">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="award-card">
-                        <div class="award-image">
-                            <img src="img/awards/9.png" alt="APAC Business Awards 2023">
-                        </div>
-                        <div class="award-content">
-                            <h4 class="award-title">APAC Insider Business Awards 2023</h4>
-                            <h5 class="award-subtitle">Best Employment Training Support Enterprise 2023 - India</h5>
-                            <p class="award-description">Recognized for excellence in providing employment training support services and emerging victorious in the APAC Business Awards 2023.</p>
-                            <div class="award-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>2023</span>
+                        <a href="https://apacinsider.digital/winners/employment-express-verband-llp-2/" class="award-card-link">
+                            <div class="award-image">
+                                <img src="img/awards/9.png" alt="APAC Business Awards 2023">
                             </div>
-                            <div class="achievement-badge">
-                                <i class="fas fa-medal"></i>
+                            <div class="award-content">
+                                <h4 class="award-title">APAC Insider Business Awards 2023</h4>
+                                <h5 class="award-subtitle">Best Employment Training Support Enterprise 2023 - India</h5>
+                                <p class="award-description">Recognized for excellence in providing employment training support services and emerging victorious in the APAC Business Awards 2023.</p>
+                                <div class="award-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>2023</span>
+                                </div>
+                                <div class="achievement-badge">
+                                    <i class="fas fa-medal"></i>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="award-card">
-                        <div class="award-image">
-                            <img src="img/awards/9.png" alt="APAC Insider Business Awards 2024">
-                        </div>
-                        <div class="award-content">
-                            <h4 class="award-title">APAC Insider Business Awards 2024</h4>
-                            <h5 class="award-subtitle">Best Employment Training Support Business 2024 - India</h5>
-                            <p class="award-description">Recognized for excellence in providing quality employment training support services across India.</p>
-                            <div class="award-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>2024</span>
+                        <a href="https://apacinsider.digital/winners/employment-express-verband-llp-3/" class="award-card-link">
+                            <div class="award-image">
+                                <img src="img/awards/9.png" alt="APAC Insider Business Awards 2024">
                             </div>
-                            <div class="achievement-badge">
-                                <i class="fas fa-trophy"></i>
+                            <div class="award-content">
+                                <h4 class="award-title">APAC Insider Business Awards 2024</h4>
+                                <h5 class="award-subtitle">Best Employment Training Support Business 2024 - India</h5>
+                                <p class="award-description">Recognized for excellence in providing quality employment training support services across India.</p>
+                                <div class="award-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>2024</span>
+                                </div>
+                                <div class="achievement-badge">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="award-card">
-                        <div class="award-image">
-                            <img src="img/awards/9.png" alt="APAC Insider Investment Banking Award">
-                        </div>
-                        <div class="award-content">
-                            <h4 class="award-title">APAC Insider Business Awards 2024</h4>
-                            <h5 class="award-subtitle">Investment Banking Services Excellence Award</h5>
-                            <p class="award-description">Recognized for outstanding services and excellence in the investment banking sector across the Asia Pacific region.</p>
-                            <div class="award-date">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>2024</span>
+                        <a href="https://apacinsider.digital/winners/employment-express-verband-llp-3/" class="award-card-link">
+                            <div class="award-image">
+                                <img src="img/awards/9.png" alt="APAC Insider Investment Banking Award">
                             </div>
-                            <div class="achievement-badge">
-                                <i class="fas fa-award"></i>
+                            <div class="award-content">
+                                <h4 class="award-title">APAC Insider Business Awards 2024</h4>
+                                <h5 class="award-subtitle">Investment Banking Services Excellence Award</h5>
+                                <p class="award-description">Recognized for outstanding services and excellence in the investment banking sector across the Asia Pacific region.</p>
+                                <div class="award-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>2024</span>
+                                </div>
+                                <div class="achievement-badge">
+                                    <i class="fas fa-award"></i>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -976,106 +1353,61 @@
     <!-- Government Collaborations Section -->
     <section class="government-collaborations-section py-5" style="background-color: #fff;">
         <div class="container">
-            <h2 class="section-title">Government <span>Collaborations</span></h2>
-            <div class="row g-4">
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card border-0 h-100" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); overflow: hidden;">
-                        <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%); position: relative;">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-color), #4361ee); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);">
-                                    <i class="fas fa-landmark text-white fa-lg"></i>
-                                </div>
-                                <h4 class="card-title mb-0 fw-bold">Government Projects - Andhra Pradesh</h4>
-                            </div>
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-3" style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), #4361ee); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);">
+                            <i class="fas fa-landmark text-white fa-2x"></i>
                         </div>
-                        <div class="card-body p-4">
-                            <ul class="list-unstyled">
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
-                                    </div>
-                                    <div>
-                                        <p class="mb-0 fw-medium">Internship provided to 20,000 candidates from APSCHE.</p>
-                                    </div>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
-                                    </div>
-                                    <div>
-                                        <p class="mb-0 fw-medium">More than 25 companies involved</p>
-                                    </div>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
-                                    </div>
-                                    <div>
-                                        <p class="mb-0 fw-medium">Sectors:</p>
-                                        <div class="d-flex flex-wrap mt-2 gap-2">
-                                            <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">IT</span>
-                                            <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">Pharma</span>
-                                            <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">Sales/Business Development</span>
-                                            <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">BFSI</span>
-                                            <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">HR</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <h2 class="mb-0 fw-bold">Government Projects - Punjab</h2>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 mb-4">
-                    <div class="card border-0 h-100" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); overflow: hidden;">
-                        <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%); position: relative;">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-color), #4361ee); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);">
-                                    <i class="fas fa-landmark text-white fa-lg"></i>
-                                </div>
-                                <h4 class="card-title mb-0 fw-bold">Government Projects - Punjab</h4>
-                            </div>
-                        </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-7 mb-4">
+                    <div class="card border-0 h-100" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); overflow: hidden; background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.05)';">
                         <div class="card-body p-4">
-                            <ul class="list-unstyled">
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-4 d-flex">
+                                    <div class="flex-shrink-0" style="width: 28px; height: 28px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
+                                        <i class="fas fa-check text-white" style="font-size: 0.8rem;"></i>
                                     </div>
                                     <div>
                                         <p class="mb-0 fw-medium">Job provided to 16,000 candidates</p>
                                     </div>
                                 </li>
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
+                                <li class="mb-4 d-flex">
+                                    <div class="flex-shrink-0" style="width: 28px; height: 28px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
+                                        <i class="fas fa-check text-white" style="font-size: 0.8rem;"></i>
                                     </div>
                                     <div>
                                         <p class="mb-0 fw-medium">More than 20 Job Fairs/ Placement Drives</p>
                                     </div>
                                 </li>
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
+                                <li class="mb-4 d-flex">
+                                    <div class="flex-shrink-0" style="width: 28px; height: 28px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
+                                        <i class="fas fa-check text-white" style="font-size: 0.8rem;"></i>
                                     </div>
                                     <div>
                                         <p class="mb-0 fw-medium">More than 125 companies involved</p>
                                     </div>
                                 </li>
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
+                                <li class="mb-4 d-flex">
+                                    <div class="flex-shrink-0" style="width: 28px; height: 28px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
+                                        <i class="fas fa-check text-white" style="font-size: 0.8rem;"></i>
                                     </div>
                                     <div>
                                         <p class="mb-0 fw-medium">Assistance provided in multiple job fairs to Punjab Government in "Ghar Ghar Rozgar Yojana"</p>
                                     </div>
                                 </li>
-                                <li class="mb-3 d-flex">
-                                    <div class="flex-shrink-0" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
-                                        <i class="fas fa-check text-white" style="font-size: 0.7rem;"></i>
+                                <li class="mb-0 d-flex">
+                                    <div class="flex-shrink-0" style="width: 28px; height: 28px; background: linear-gradient(135deg, #4caf50, #8bc34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; margin-top: 2px;">
+                                        <i class="fas fa-check text-white" style="font-size: 0.8rem;"></i>
                                     </div>
                                     <div>
-                                        <p class="mb-0 fw-medium">Sectors:</p>
-                                        <div class="d-flex flex-wrap mt-2 gap-2">
+                                        <p class="mb-2 fw-medium">Sectors:</p>
+                                        <div class="d-flex flex-wrap gap-2">
                                             <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">IT</span>
                                             <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">Pharma</span>
                                             <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white;">Sales/Business Development</span>
@@ -1086,6 +1418,18 @@
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 mb-4">
+                    <div class="card border-0 h-100" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); overflow: hidden; background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.05)';">
+                        <div class="card-body d-flex align-items-center justify-content-center p-4">
+                            <div class="position-relative">
+                                <img src="img/government/punjab-govt.png" alt="Punjab Government Project" class="img-fluid" style="max-width: 100%; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.15)';">
+                                <div class="position-absolute" style="top: -10px; right: -10px; background: linear-gradient(135deg, var(--primary-color), #4361ee); color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2);">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
