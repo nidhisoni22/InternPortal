@@ -2,121 +2,162 @@
 const internships = [
     {
         id: 1,
-        title: "Data Scientist",
-        duration: "3 Months",
+        title: "Data Scientist Intern",
+        company: "Infosys",
+        location: "Gurgaon",
+        duration: "6 Months",
+        workType: "Remote",
         category: "Data Science",
         description: "A Data Scientist Internship offers hands-on experience in extracting insights from complex datasets using statistical analysis, machine learning, and data visualization. You'll work on real-world projects, develop predictive models, and communicate findings to drive business decisions.",
         icon: "fas fa-brain"
     },
     {
         id: 2,
-        title: "Artificial Intelligence (AI) Engineer",
+        title: "Artificial Intelligence (AI) Engineer Intern",
+        company: "Microsoft",
+        location: "Gurgaon",
         duration: "6 Months",
+        workType: "Remote",
         category: "Artificial Intelligence",
         description: "An AI Engineer Internship provides experience in developing intelligent systems using machine learning, deep learning, and neural networks. You'll work on cutting-edge AI applications, implement algorithms, and contribute to solutions that mimic human intelligence.",
         icon: "fas fa-robot"
     },
     {
         id: 3,
-        title: "Cloud Architect",
+        title: "Cloud Architect Intern",
+        company: "Amazon Web Services",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Cloud Computing",
         description: "A Cloud Architect Internship offers experience in designing and implementing cloud infrastructure. You'll work with platforms like AWS, Azure, or Google Cloud to develop scalable, secure, and cost-effective cloud solutions while gaining expertise in cloud migration and optimization.",
         icon: "fas fa-cloud"
     },
     {
         id: 4,
-        title: "Cybersecurity Specialist",
+        title: "Cybersecurity Specialist Intern",
+        company: "HCL Technologies",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Cybersecurity",
         description: "A Cybersecurity Specialist Internship focuses on protecting organizations from digital threats. You'll gain experience in vulnerability assessments, threat analysis, security policy development, and compliance monitoring while developing skills to safeguard critical information systems.",
         icon: "fas fa-shield-alt"
     },
     {
         id: 5,
-        title: "Product Manager",
+        title: "Product Manager Intern",
+        company: "Tech Mahindra",
+        location: "Gurgaon",
         duration: "6 Months",
+        workType: "Remote",
         category: "Product Management",
         description: "A Product Manager Internship provides hands-on experience in managing product lifecycles. You'll define roadmaps, conduct market research, create specifications, collaborate with cross-functional teams, gather user feedback, and track KPIs to ensure successful product development.",
         icon: "fas fa-tasks"
     },
     {
         id: 6,
-        title: "Blockchain Developer",
+        title: "Blockchain Developer Intern",
+        company: "Ethereum Foundation",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Blockchain Development",
         description: "A Blockchain Developer Internship offers experience in developing decentralized applications and smart contracts. You'll work with blockchain platforms like Ethereum, Solana, or Hyperledger to create secure, transparent, and efficient distributed systems for various industries.",
         icon: "fas fa-link"
     },
     {
         id: 7,
-        title: "Investment Banker",
+        title: "Investment Banker Intern",
+        company: "Goldman Sachs",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Finance",
         description: "An Investment Banker Internship provides exposure to corporate finance, mergers and acquisitions, and capital markets. You'll assist with financial modeling, market analysis, due diligence, and pitch book preparation while developing skills in valuation and strategic advisory.",
         icon: "fas fa-chart-line"
     },
     {
         id: 8,
-        title: "Digital Marketing Specialist",
-        duration: "6 Months",
-        category: "Marketing",
-        description: "A Digital Marketing Specialist Internship offers experience in online marketing, SEO, SEM, social media, and analytics. You'll help plan and execute campaigns, analyze data, and optimize strategies to grow brand presence and engagement.",
+        title: "Digital Marketing Specialist Intern",
+        company: "Google",
+        location: "Delhi",
+        duration: "4 Months",
+        workType: "Remote",
+        category: "Digital Marketing",
+        description: "A Digital Marketing Specialist Internship provides hands-on experience in planning and executing marketing campaigns across digital channels. You'll work with SEO, social media, content marketing, email campaigns, and analytics tools to drive brand awareness and customer engagement.",
         icon: "fas fa-bullhorn"
     },
     {
         id: 9,
-        title: "Chartered Accountant",
+        title: "Chartered Accountant Intern",
+        company: "Deloitte",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Accounting",
-        description: "A Chartered Accountant Internship provides hands-on experience in accounting, auditing, taxation, and financial reporting. You'll work on compliance, analyze financial statements, and assist in audits for various clients.",
+        description: "A Chartered Accountant Internship offers experience in financial accounting, auditing, taxation, and corporate law. You'll assist in preparing financial statements, conducting audits, managing tax compliance, and providing financial advisory services to clients across various industries.",
         icon: "fas fa-calculator"
     },
     {
         id: 10,
-        title: "Full-Stack Developer",
+        title: "Full-Stack Developer Intern",
+        company: "Microsoft",
+        location: "Gurgaon",
         duration: "6 Months",
-        category: "Software Development",
-        description: "A Full-Stack Developer Internship provides exposure to both frontend and backend development. You'll work with modern frameworks, databases, and APIs to build robust, scalable web applications.",
+        workType: "Remote",
+        category: "Web Development",
+        description: "A Full-Stack Developer Internship provides experience in both front-end and back-end development. You'll work with technologies like HTML, CSS, JavaScript, React, Node.js, and databases to build complete web applications while gaining skills in UI/UX design and server-side programming.",
         icon: "fas fa-laptop-code"
     },
     {
         id: 11,
-        title: "Data Analyst",
+        title: "Data Analyst Intern",
+        company: "Amazon",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Data Analysis",
-        description: "A Data Analyst Internship offers experience in collecting, processing, and analyzing data to support business decisions. You'll use tools like Excel, SQL, and BI platforms to create reports and dashboards.",
+        description: "A Data Analyst Internship offers hands-on experience in analyzing complex datasets to extract meaningful insights. You'll work with tools like Excel, SQL, Python, and visualization platforms to collect, clean, and interpret data that drives business decisions and strategy development.",
         icon: "fas fa-chart-bar"
     },
     {
         id: 12,
-        title: "UX Designer",
+        title: "UX Designer Intern",
+        company: "Apple",
+        location: "Delhi",
         duration: "6 Months",
-        category: "Design",
-        description: "A UX Designer Internship provides experience in designing user interfaces and improving user experiences. You'll conduct research, create wireframes, and collaborate with developers to deliver intuitive digital products.",
+        workType: "Remote",
+        category: "UX/UI Design",
+        description: "A UX Designer Internship provides experience in creating user-centered digital experiences. You'll conduct user research, develop wireframes and prototypes, perform usability testing, and collaborate with development teams to create intuitive, accessible, and engaging digital products.",
         icon: "fas fa-pencil-ruler"
     },
     {
         id: 13,
-        title: "Project Manager",
+        title: "Project Manager Intern",
+        company: "Infosys",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Project Management",
-        description: "A Project Manager Internship offers hands-on experience in planning, executing, and closing projects. You'll coordinate teams, manage resources, track progress, and ensure project goals are met on time.",
-        icon: "fas fa-code-branch"
+        description: "A Project Manager Internship provides experience in coordinating projects from initiation to completion. You'll assist in planning timelines, allocating resources, managing stakeholders, tracking progress, and ensuring deliverables meet quality standards and business objectives.",
+        icon: "fas fa-project-diagram"
     },
     {
         id: 14,
-        title: "Product Manager",
+        title: "Product Manager Intern",
+        company: "Google",
+        location: "Delhi",
         duration: "6 Months",
+        workType: "Remote",
         category: "Product Management",
         description: "A Product Manager Internship provides hands-on experience in managing product lifecycles. You'll define roadmaps, conduct market research, create specifications, collaborate with cross-functional teams, gather user feedback, and track KPIs to ensure successful product development.",
         icon: "fas fa-tasks"
     }
 ];
-   
 
 // Items per page
-const itemsPerPage = 7;
+const itemsPerPage = 6;
 let currentPage = 1;
 
 // Get URL parameters to determine current page

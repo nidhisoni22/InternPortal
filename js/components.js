@@ -208,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li class="nav-item">
                         <a class="nav-link" id="nav-contact" href="contact.html">Contact</a>
                     </li>
+
                 </ul>
                 <div class="social-icons d-none d-lg-flex">
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -224,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Insert footer HTML
     document.getElementById('footer-container').innerHTML = `
     <!-- Footer -->
-    <footer class="footer py-5 bg-dark text-white">
+    <footer class="footer py-5 bg-dark text-white" style="width: 100%; position: relative; z-index: 10; bottom: 0; left: 0; right: 0;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -247,16 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li><a href="#">Success Stories</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5>For Employers</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Post Internships</a></li>
-                        <li><a href="#">Employer Dashboard</a></li>
-                        <li><a href="#">Talent Search</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                    </ul>
-                </div>
+
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h5>Company</h5>
                     <ul class="footer-links">

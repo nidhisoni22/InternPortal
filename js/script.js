@@ -80,39 +80,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Testimonial Data
     const testimonials = [
         {
-            name: "Madhab Kafle",
-            company: "TCS",
-            image: "img/testimonials/testimonails1.jpg",
-            companyLogo: "img/logos/tcs.svg",
-            role: "Software Engineer"
+            name: "Rahul Singh",
+            role: "Cyber Security Intern",
+            review: "I am fortunate to have taken this course as my foundation is getting stronger. During lectures we got the best teachers and most of the sessions related to overall development in cyber security. This is the best platform to learn with hands-on projects."
         },
         {
-            name: "Mandeep Hooda",
-            company: "Capgemini",
-            image: "img/testimonials/testimonials2.jpg",
-            companyLogo: "img/logos/capgemini.svg",
-            role: "Data Analyst"
+            name: "Priya Sharma",
+            role: "Full Stack Developer",
+            review: "Nice teaching by the lecturers. We can learn easily and understand very well. With the help of these classes, we can create projects on our own. Good teaching made full stack projects easy to complete. The organization is good and helpful for learning."
         },
         {
-            name: "Naushin Adiba",
-            company: "Samsung",
-            image: "img/testimonials/testimonials5.jpg",
-            companyLogo: "img/logos/samsung.png",
-            role: "Product Manager"
+            name: "Amit Kumar",
+            role: "Data Science Intern",
+            review: "I'm impressed! Good mentors who explain concepts in an understandable way. Thanks so much for your very valuable training. I really enjoyed it and appreciated the hands-on approach."
         },
         {
-            name: "Srivalika Iyer",
-            company: "Deutsche Bank",
-            image: "img/testimonials/testimonials4.jpg",
-            companyLogo: "img/logos/deutsche.svg",
-            role: "Financial Analyst"
+            name: "Neha Patel",
+            role: "Cloud Computing Intern",
+            review: "The best company I've ever seen & experienced. They explain everything so patiently with compassion & kindness. I'm always thankful to this company for the opportunities they've provided."
         },
         {
-            name: "K Sanketh Kumar",
-            company: "EA",
-            image: "img/testimonials/testimonials6.jpg",
-            companyLogo: "img/logos/ea-games.svg",
-            role: "Game Developer"
+            name: "Vikram Reddy",
+            role: "Software Development Intern",
+            review: "In these sessions we discussed many important topics. All topics are very useful in my programming languages. .NET was also used for my practice programs. So thankful for these classes and the practical knowledge gained."
+        },
+        {
+            name: "Anjali Desai",
+            role: "UI/UX Design Intern",
+            review: "They taught us well. They provided us with PDFs and presentations during internship sessions and helped with resolving our doubts. The structured approach made learning design principles much easier."
         }
     ];
 
@@ -133,9 +128,15 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         },
         autoplay: {
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false,
         },
+        loop: true,
+        effect: 'slide',
+        speed: 800,
+        grabCursor: true,
+        autoHeight: false, // Disable auto height
+        height: 300, // Fixed height
     });
 
     // Populate Testimonials
@@ -148,12 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             slide.innerHTML = `
                 <div class="testimonial-card">
-                    <img src="${testimonial.image}" alt="${testimonial.name}" class="testimonial-image">
-                    <h4 class="mb-1">${testimonial.name}</h4>
-                    <p class="text-muted mb-2">${testimonial.role}</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="${testimonial.companyLogo}" alt="${testimonial.company}" class="company-logo">
-                        <span>${testimonial.company}</span>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text mb-4">${testimonial.review}</p>
+                        <div class="testimonial-author">
+                            <h5 class="mb-1">${testimonial.name}</h5>
+                            <p class="text-muted mb-0">${testimonial.role}</p>
+                        </div>
                     </div>
                 </div>
             `;
@@ -166,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     populateTestimonials();
 
     // Initialize Certificate Slider
-    var certificateSlider = new Swiper(".certificate-slider", {
+    new Swiper(".certificate-slider", {
         slidesPerView: "auto",
         centeredSlides: true,
         spaceBetween: 30,
@@ -180,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pagination: {
             el: ".certificate-pagination",
             clickable: true,
-            renderBullet: function (index, className) {
+            renderBullet: function (_, className) {
                 return '<span class="' + className + '"></span>';
             },
         },
