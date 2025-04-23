@@ -1,0 +1,130 @@
+/* Partners Carousel Style - Single Circular Slider */
+.partners-carousel-section {
+    background-color: #f5f7fa;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-carousel-title {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.partners-carousel {
+    position: relative;
+    padding: 0 40px;
+}
+
+.partners-carousel .swiper-slide {
+    height: 140px; /* Increased from 80px to accommodate larger logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.partner-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 15px; /* Increased from 10px */
+}
+
+.partner-carousel-item img {
+    max-width: 100%;
+    max-height: 80px; /* Increased from 50px */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    min-width: 60px; /* Ensure minimum width */
+}
+
+.partner-carousel-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Specific styling for NIIT Foundation logo */
+.niit-foundation-logo {
+    max-height: 100px !important; /* Significantly increased size */
+    min-height: 80px !important; /* Ensure minimum height */
+    min-width: 80px !important; /* Ensure minimum width */
+}
+
+.partner-carousel-item:hover .niit-foundation-logo {
+    transform: scale(1.15);
+}
+
+.partners-carousel .swiper-button-next,
+.partners-carousel .swiper-button-prev {
+    color: #0d6efd;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.partners-carousel .swiper-button-next:after,
+.partners-carousel .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.partners-carousel .swiper-button-next:hover,
+.partners-carousel .swiper-button-prev:hover {
+    background: #0d6efd;
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .partners-carousel {
+        padding: 0 30px;
+    }
+
+    .partner-carousel-item img {
+        max-height: 70px; /* Increased from 40px */
+        min-height: 50px;
+        min-width: 50px;
+    }
+
+    .niit-foundation-logo {
+        max-height: 90px !important;
+        min-height: 70px !important;
+        min-width: 70px !important;
+    }
+
+    /* Increase the height of the carousel slides */
+    .partners-carousel .swiper-slide {
+        height: 120px; /* Increased from 80px */
+    }
+}
+
+@media (max-width: 576px) {
+    .partners-carousel {
+        padding: 0 20px;
+    }
+
+    .partner-carousel-item img {
+        max-height: 60px; /* Increased from 35px */
+        min-height: 40px;
+        min-width: 40px;
+    }
+
+    .niit-foundation-logo {
+        max-height: 80px !important;
+        min-height: 60px !important;
+        min-width: 60px !important;
+    }
+
+    /* Maintain increased height for smaller screens */
+    .partners-carousel .swiper-slide {
+        height: 100px;
+    }
+}

@@ -74,6 +74,43 @@ document.addEventListener('DOMContentLoaded', function() {
             font-weight: 700;
             font-size: 1.5rem;
             color: #333;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand img.navbar-logo {
+            height: 48px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img.navbar-logo {
+                height: 40px;
+            }
+            .navbar-brand .brand-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        .navbar-brand:hover {
+            color: var(--primary-color);
+        }
+
+        .navbar-brand:hover img.navbar-logo {
+            transform: scale(1.05);
+        }
+
+        /* Add a subtle pulse animation for the logo on page load */
+        @keyframes logoPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        .navbar-logo-animation {
+            animation: logoPulse 1.5s ease-in-out;
         }
 
         .navbar-nav .nav-link {
@@ -105,16 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             border-radius: 10px;
         }
 
-        .social-icons a {
-            color: #555;
-            margin-left: 12px;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: var(--primary-color);
-        }
+        /* Social icons styles removed */
 
         .dropdown-menu {
             border: none;
@@ -167,9 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 text-align: center;
             }
 
-            .social-icons.d-none.d-lg-flex {
-                display: none !important;
-            }
+            /* Social icons media query removed */
 
             .navbar-toggler {
                 padding: 4px 8px;
@@ -186,8 +212,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent; box-shadow: none; display: block !important;" id="mainNavbar">
         <div class="container d-flex justify-content-center">
-            <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: #ffffff; border-radius: 50px; padding: 12px 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); width: 95%; max-width: 1140px; display: flex !important;">
-            <a class="navbar-brand fw-bold" href="index.html">InternPortal</a>
+            <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: #ffffff; border-radius: 50px; padding: 10px 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); width: 95%; max-width: 1140px; display: flex !important;">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="img/logos/E@V.png" alt="E@V Logo" class="navbar-logo me-3" style="height: 48px; width: auto; transition: all 0.3s ease; vertical-align: middle;">
+                <span class="brand-text">InternPortal</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -210,12 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     </li>
 
                 </ul>
-                <div class="social-icons d-none d-lg-flex">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
             </div>
             </div>
         </div>
@@ -229,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-logo">InternPortal</h3>
+                    <h3 class="footer-logo"><a href="index.html" style="color: white; text-decoration: none;">InternPortal</a></h3>
                     <p>Connecting talented students with top companies for meaningful internship experiences that shape future careers</p>
                     <div class="social-icons mt-3">
                         <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
@@ -245,18 +268,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li><a href="#">Resume Builder</a></li>
                         <li><a href="#">Interview Prep</a></li>
                         <li><a href="#">Career Resources</a></li>
-                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h5>Company</h5>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Press</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4">
@@ -284,6 +307,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Set active nav link
     setActiveNavLink();
+
+    // Add animation to the logo
+    setTimeout(() => {
+        const navbarLogo = document.querySelector('.navbar-logo');
+        if (navbarLogo) {
+            navbarLogo.classList.add('navbar-logo-animation');
+        }
+    }, 500);
 
     // Ensure Bootstrap's collapse functionality works properly
     setTimeout(() => {
