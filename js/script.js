@@ -37,6 +37,62 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+
+    // Hero section animations
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        // Add animation class to trigger entrance animations
+        setTimeout(() => {
+            heroSection.classList.add('animated');
+        }, 100);
+
+        // Add hover effects and tooltips to category bubbles
+        const categoryBubbles = document.querySelectorAll('.category-bubble');
+        categoryBubbles.forEach(bubble => {
+            const category = bubble.getAttribute('data-category');
+
+            // Create tooltip using Bootstrap
+            new bootstrap.Tooltip(bubble, {
+                title: category,
+                placement: 'top',
+                trigger: 'hover focus'
+            });
+
+            bubble.addEventListener('mouseenter', () => {
+                bubble.style.transform = 'scale(1.2)';
+            });
+
+            bubble.addEventListener('mouseleave', () => {
+                bubble.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // Animated Headlines Rotation
+    const headlines = document.querySelectorAll('.headline');
+    let currentHeadline = 0;
+
+    function rotateHeadlines() {
+        // Remove active class from all headlines
+        headlines.forEach(headline => headline.classList.remove('active'));
+
+        // Add active class to current headline
+        headlines[currentHeadline].classList.add('active');
+
+        // Increment counter and reset if needed
+        currentHeadline++;
+        if (currentHeadline >= headlines.length) {
+            currentHeadline = 0;
+        }
+    }
+
+    // Set initial active headline
+    if (headlines.length > 0) {
+        headlines[0].classList.add('active');
+
+        // Start rotation
+        setInterval(rotateHeadlines, 3000);
+    }
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
 
@@ -81,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Counter animation for stats
-    const statElements = document.querySelectorAll('.stat-number');
+    const statElements = document.querySelectorAll('.stat-number, .key-stat-number');
 
     const animateCounter = (el) => {
         const originalText = el.textContent;
@@ -89,23 +145,45 @@ document.addEventListener('DOMContentLoaded', function() {
         let isLacs = false;
         let suffix = '+';
 
-        // Determine the target value and suffix based on the label
-        const labelText = el.closest('.stat-item').querySelector('.stat-label').textContent;
+        // Check if this is a key-stat-number
+        if (el.classList.contains('key-stat-number')) {
+            // Get the small tag inside for suffix
+            const smallTag = el.querySelector('small');
+            const suffixText = smallTag ? smallTag.textContent : '';
 
-        if (labelText.includes('Trained and Placed')) {
-            targetValue = 1.5;
-            isLacs = true;
-            suffix = ' lacs+';
-        } else if (labelText.includes('Through Job Fairs')) {
-            targetValue = 2;
-            isLacs = true;
-            suffix = ' lacs+';
-        } else if (labelText.includes('Internships')) {
-            targetValue = 2.5;
-            isLacs = true;
-            suffix = ' lacs+';
+            // Remove the small tag text from the original text
+            const numText = originalText.replace(suffixText, '');
+
+            // Parse the number
+            targetValue = parseFloat(numText);
+
+            // Check if it's a lacs value
+            if (suffixText.includes('Lacs')) {
+                isLacs = true;
+                suffix = smallTag ? smallTag.outerHTML : '<small>+</small>';
+            } else {
+                suffix = smallTag ? smallTag.outerHTML : '<small>+</small>';
+            }
         } else {
-            targetValue = parseInt(originalText.replace(/,/g, '').replace(/\+/g, ''));
+            // Original stats logic
+            // Determine the target value and suffix based on the label
+            const labelText = el.closest('.stat-item').querySelector('.stat-label').textContent;
+
+            if (labelText.includes('Trained and Placed')) {
+                targetValue = 1.5;
+                isLacs = true;
+                suffix = ' lacs+';
+            } else if (labelText.includes('Through Job Fairs')) {
+                targetValue = 2;
+                isLacs = true;
+                suffix = ' lacs+';
+            } else if (labelText.includes('Internships')) {
+                targetValue = 2.5;
+                isLacs = true;
+                suffix = ' lacs+';
+            } else {
+                targetValue = parseInt(originalText.replace(/,/g, '').replace(/\+/g, ''));
+            }
         }
 
         // For non-decimal values
@@ -117,10 +195,24 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentValue = 0;
 
         // Add animation class to the parent item
-        el.closest('.stat-item').classList.add('counting');
+        const parentItem = el.closest('.stat-item') || el.closest('.key-stat');
+        if (parentItem) {
+            parentItem.classList.add('counting');
+        }
 
         // Start with 0
-        el.textContent = isLacs ? '0' + suffix : '0' + suffix;
+        if (el.classList.contains('key-stat-number')) {
+            // For key stats with HTML suffix
+            el.innerHTML = isLacs ? '0' + suffix : '0' + suffix;
+        } else {
+            // For regular stats with text suffix
+            el.textContent = '0';
+            if (isLacs) {
+                el.setAttribute('data-suffix', ' lacs+');
+            } else {
+                el.setAttribute('data-suffix', '+');
+            }
+        }
 
         const timer = setInterval(() => {
             currentFrame++;
@@ -130,27 +222,55 @@ document.addEventListener('DOMContentLoaded', function() {
             currentValue = targetValue * progress;
 
             // Format the display value
-            if (isLacs) {
-                // For decimal values, show one decimal place
-                el.textContent = currentValue.toFixed(1) + suffix;
+            if (el.classList.contains('key-stat-number')) {
+                // For key stats with HTML suffix
+                if (isLacs) {
+                    // For decimal values, show one decimal place
+                    el.innerHTML = currentValue.toFixed(1) + suffix;
+                } else {
+                    // For integers, round and add commas
+                    el.innerHTML = Math.round(currentValue).toLocaleString() + suffix;
+                }
             } else {
-                // For integers, round and add commas
-                el.textContent = Math.round(currentValue).toLocaleString() + suffix;
+                // For regular stats with text suffix
+                if (isLacs) {
+                    // For decimal values, show one decimal place
+                    el.textContent = currentValue.toFixed(1);
+                    el.setAttribute('data-suffix', ' lacs+');
+                } else {
+                    // For integers, round and add commas
+                    el.textContent = Math.round(currentValue).toLocaleString();
+                    el.setAttribute('data-suffix', '+');
+                }
             }
 
             // Check if animation is complete
             if (currentFrame >= totalFrames) {
                 // Set the final exact value
-                if (isLacs) {
-                    el.textContent = targetValue.toFixed(1) + suffix;
+                if (el.classList.contains('key-stat-number')) {
+                    // For key stats with HTML suffix
+                    if (isLacs) {
+                        el.innerHTML = targetValue.toFixed(1) + suffix;
+                    } else {
+                        el.innerHTML = Math.round(targetValue).toLocaleString() + suffix;
+                    }
                 } else {
-                    el.textContent = Math.round(targetValue).toLocaleString() + suffix;
+                    // For regular stats with text suffix
+                    if (isLacs) {
+                        el.textContent = targetValue.toFixed(1);
+                        el.setAttribute('data-suffix', ' lacs+');
+                    } else {
+                        el.textContent = Math.round(targetValue).toLocaleString();
+                        el.setAttribute('data-suffix', '+');
+                    }
                 }
 
                 clearInterval(timer);
                 // Remove animation class and add completed class
-                el.closest('.stat-item').classList.remove('counting');
-                el.closest('.stat-item').classList.add('counted');
+                if (parentItem) {
+                    parentItem.classList.remove('counting');
+                    parentItem.classList.add('counted');
+                }
             }
         }, 1000 / fps);
     };
@@ -214,8 +334,146 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    // Circular Testimonial Data - Now using static HTML implementation
-    // Keeping the data here for reference but not using it anymore
+    // Circular Testimonial Data - Using static HTML implementation for the second carousel
+    // But keeping the data here for reference
+    const circularTestimonials = [
+        {
+            name: "Kranthi",
+            role: "Intern",
+            rating: 3,
+            review: "I had a great experience here and learn a very good information, It being helpful to my career."
+        },
+        {
+            name: "Sandeep",
+            role: "Software Developer Intern",
+            rating: 4,
+            review: "It was nice getting job from this platform. Even though they check our technical skills and conduct interview based on it."
+        },
+        {
+            name: "Gaythri",
+            role: "Web Developer Intern",
+            rating: 5,
+            review: "Through the intership I'm improve my skills and this company useful for me a lot i learned very easily"
+        },
+        {
+            name: "Madhavi",
+            role: ".NET Developer Intern",
+            rating: 5,
+            review: "NET Developer Interns helps us to build software using the .NET framework, JavaScript, JQuery, HTML5, and other control library."
+        },
+        {
+            name: "Rahul Ammuri",
+            role: "Intern",
+            rating: 4.5,
+            review: "The best company I've ever seen & experienced. They are explaining everything so patiently. So compassionate & kindness. I'm always Thankful to this company"
+        }
+    ];
+
+    // Initialize Testimonials Swiper with left-to-right continuous movement (opposite of default)
+    const testimonialSwiper = new Swiper('.testimonialSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        // Pagination removed for continuous movement
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3, // Ensure 3 slides are shown on desktop
+            },
+        },
+        autoplay: {
+            delay: 0, // Set to 0 for immediate movement
+            disableOnInteraction: false,
+            reverseDirection: false, // Default direction (right-to-left)
+        },
+        loop: true,
+        effect: 'slide',
+        speed: 5000, // Faster movement to match second carousel
+        grabCursor: false, // Disable grab cursor for continuous movement
+        autoHeight: false, // Disable auto height
+        height: 300, // Fixed height
+        centeredSlides: true,
+        allowTouchMove: false, // Disable touch movement for continuous flow
+        loopAdditionalSlides: 10, // Add more slides for smoother looping
+        simulateTouch: false, // Disable touch simulation
+        touchRatio: 0, // Disable touch ratio
+        resistance: false, // Disable resistance
+        watchSlidesProgress: true, // Watch slides progress
+        watchSlidesVisibility: true, // Watch slides visibility
+        observer: true, // Enable observer
+        observeParents: true, // Enable parent observer
+        on: {
+            init: function() {
+                // Force the carousel to start moving immediately
+                this.autoplay.start();
+                console.log('First carousel initialized and started');
+            }
+        }
+    });
+
+    // Initialize Circular Testimonials Swiper with right-to-left continuous movement
+    const testimonialSwiperCircular = new Swiper('.testimonialSwiperCircular', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        // Pagination removed for continuous movement
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3, // Ensure 3 slides are shown on desktop
+            },
+        },
+        autoplay: {
+            delay: 0, // Set to 0 for immediate movement
+            disableOnInteraction: false,
+            reverseDirection: true, // Left to right direction (opposite of first carousel)
+        },
+        loop: true,
+        effect: 'slide',
+        speed: 5000, // Faster movement
+        grabCursor: false, // Disable grab cursor for continuous movement
+        autoHeight: false, // Disable auto height
+        height: 300, // Fixed height
+        direction: 'horizontal',
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        centeredSlides: true,
+        allowTouchMove: false, // Disable touch movement for continuous flow
+        loopAdditionalSlides: 10, // Add more slides for smoother looping
+        simulateTouch: false, // Disable touch simulation
+        touchRatio: 0, // Disable touch ratio
+        resistance: false, // Disable resistance
+        watchSlidesProgress: true, // Watch slides progress
+        watchSlidesVisibility: true, // Watch slides visibility
+        observer: true, // Enable observer
+        observeParents: true, // Enable parent observer
+        on: {
+            init: function() {
+                // Force the carousel to start moving immediately
+                this.autoplay.start();
+                console.log('Second carousel initialized and started');
+            }
+        }
+    });
+
+    // Both swipers move independently in opposite directions - first carousel moves left-to-right, second moves right-to-left
+    // Force start both carousels to ensure they're moving
+    setTimeout(function() {
+        testimonialSwiper.autoplay.start();
+        testimonialSwiperCircular.autoplay.start();
+        console.log('Both carousels forced to start after timeout');
+    }, 500);
+
+    // Add event listener to ensure carousels keep moving even if user switches tabs
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            testimonialSwiper.autoplay.start();
+            testimonialSwiperCircular.autoplay.start();
+            console.log('Carousels restarted after tab visibility change');
+        }
+    });
 
     // Populate Testimonials
     function populateTestimonials() {
