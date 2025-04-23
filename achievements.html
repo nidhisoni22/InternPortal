@@ -1296,35 +1296,32 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Left Column - Award Image -->
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                            <div class="position-relative" style="animation: float 3s ease-in-out infinite;">
-                        <div class="award-image-container">
-                            <img src="img/awards/Apac.png" alt="APAC Insider Award" class="img-fluid award-main-image">
-                            <div class="award-badge">
-                                <i class="fas fa-trophy"></i>
-                                </div>
-                            <!-- Decorative Elements -->
-                            <div class="decoration-circle circle-1"></div>
-                            <div class="decoration-circle circle-2"></div>
-                            <div class="decoration-circle circle-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Right Column - Text Content -->
-                <div class="col-lg-7 hero-content">
-                    <div class="award-badge-container mb-4 text-center text-lg-start">
-                        <span class="award-badge-text">
-                            <i class="fas fa-star me-2"></i>
-                            APAC INSIDER BUSINESS AWARDS
-                        </span>
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <span class="award-badge-text">
+                        <i class="fas fa-star me-2"></i>
+                        APAC INSIDER BUSINESS AWARDS
+                    </span>
                 </div>
-                    <h1 class="hero-title mb-4 text-center text-lg-start">Award-Winning <br><span class="gradient-text">Excellence</span></h1>
-                    <p class="hero-subtitle text-center text-lg-start mx-auto mx-lg-0">Recognized as the Best Employment Training Support Business 2024 - India and Investment Banking Services Excellence Award 2024</p>
-
             </div>
-        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 text-center">
+                    <div class="position-relative d-inline-block">
+                        <img src="img/awards/Apac.png" alt="APAC Insider Award" class="img-fluid award-main-image" style="animation: float 3s ease-in-out infinite;">
+                        <div class="award-badge">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="decoration-circle circle-1"></div>
+                        <div class="decoration-circle circle-2"></div>
+                        <div class="decoration-circle circle-3"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h1 class="hero-title mb-4">Award-Winning <br><span class="gradient-text">Excellence</span></h1>
+                    <p class="hero-subtitle">Recognized as the Best Employment Training Support Business 2024 - India and Investment Banking Services Excellence Award 2024</p>
+                </div>
+            </div>
         </div>
 
         <style>
@@ -1348,36 +1345,54 @@
                 animation: pulse 10s infinite alternate;
             }
 
-            .award-image-container {
-                position: relative;
-                width: 400px;
-                height: 400px;
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
             .award-main-image {
                 width: 300px;
                 height: 300px;
                 object-fit: cover;
-                border-radius: 50%; /* Changed from 20px to 50% for circular shape */
+                border-radius: 50%;
                 border: 8px solid white;
                 background: white;
                 position: relative;
                 z-index: 2;
                 transition: transform 0.3s ease;
+                display: block;
+                margin: 0 auto;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             }
 
             .award-main-image:hover {
                 transform: scale(1.05);
             }
 
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
             .award-badge {
                 position: absolute;
                 top: 20px;
-                right: 20px;
+                right: 50%;
+                margin-right: -130px;
                 width: 60px;
                 height: 60px;
                 background: linear-gradient(135deg, #0d6efd, #4361ee);
@@ -1404,7 +1419,8 @@
                 width: 200px;
                 height: 200px;
                 top: -30px;
-                left: -30px;
+                left: 50%;
+                margin-left: -130px;
                 animation: float 6s infinite alternate;
             }
 
@@ -1412,7 +1428,8 @@
                 width: 150px;
                 height: 150px;
                 bottom: 20px;
-                right: 20px;
+                right: 50%;
+                margin-right: -130px;
                 animation: float 4s infinite alternate-reverse;
             }
 
@@ -1420,7 +1437,8 @@
                 width: 100px;
                 height: 100px;
                 top: 50%;
-                right: -20px;
+                right: 50%;
+                margin-right: -180px;
                 animation: float 5s infinite alternate;
             }
 
@@ -1477,15 +1495,30 @@
                     padding: 80px 0;
                 }
 
-                .award-image-container {
-                    width: 300px;
-                    height: 300px;
-                    margin: 0 auto 40px;
-                }
-
                 .award-main-image {
                     width: 250px;
                     height: 250px;
+                    margin: 0 auto 40px;
+                }
+
+                .award-badge {
+                    right: 50%;
+                    margin-right: -105px;
+                }
+
+                .circle-1 {
+                    left: 50%;
+                    margin-left: -105px;
+                }
+
+                .circle-2 {
+                    right: 50%;
+                    margin-right: -105px;
+                }
+
+                .circle-3 {
+                    right: 50%;
+                    margin-right: -155px;
                 }
 
                 .hero-title {
@@ -1494,14 +1527,38 @@
             }
 
             @media (max-width: 576px) {
-                .award-image-container {
-                    width: 250px;
-                    height: 250px;
-                }
-
                 .award-main-image {
                     width: 200px;
                     height: 200px;
+                }
+
+                .award-badge {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.2rem;
+                    right: 50%;
+                    margin-right: -80px;
+                }
+
+                .circle-1 {
+                    width: 150px;
+                    height: 150px;
+                    left: 50%;
+                    margin-left: -80px;
+                }
+
+                .circle-2 {
+                    width: 120px;
+                    height: 120px;
+                    right: 50%;
+                    margin-right: -80px;
+                }
+
+                .circle-3 {
+                    width: 80px;
+                    height: 80px;
+                    right: 50%;
+                    margin-right: -120px;
                 }
 
                 .hero-title {
@@ -1650,7 +1707,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-user-graduate"></i>
                         </div>
-                        <h3 class="stat-number">1.5 lacs+</h3>
+                        <h3 class="stat-number">1.5 lacs</h3>
                         <p class="stat-label">Candidates Trained and Placed</p>
                     </div>
                 </div>
@@ -1659,7 +1716,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-briefcase"></i>
                         </div>
-                        <h3 class="stat-number">650+</h3>
+                        <h3 class="stat-number">650</h3>
                         <p class="stat-label">Corporate Collaborations</p>
                     </div>
                 </div>
@@ -1668,7 +1725,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <h3 class="stat-number">8+</h3>
+                        <h3 class="stat-number">8</h3>
                         <p class="stat-label">States Presence in India</p>
                     </div>
                 </div>
@@ -1677,7 +1734,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <h3 class="stat-number">139+</h3>
+                        <h3 class="stat-number">139</h3>
                         <p class="stat-label">Job Fairs/Campus Drives</p>
                     </div>
                 </div>
@@ -1688,7 +1745,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3 class="stat-number">2 lacs+</h3>
+                        <h3 class="stat-number">2 lacs</h3>
                         <p class="stat-label">Candidates Placed Through Job Fairs</p>
                     </div>
                 </div>
@@ -1697,7 +1754,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h3 class="stat-number">2.5 lacs+</h3>
+                        <h3 class="stat-number">2.5 lacs</h3>
                         <p class="stat-label">Internships in 15+ Departments</p>
                     </div>
                 </div>
@@ -1962,299 +2019,172 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-date">2015</div>
+                        <div class="timeline-date">2019</div>
                         <h4 class="timeline-title">Foundation</h4>
                         <p class="timeline-description">EmploymentExpress Verband LLP was established with a vision to create an unemployment-free India.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-date">2017</div>
-                        <h4 class="timeline-title">First Major Partnership</h4>
-                        <p class="timeline-description">Partnered with 50+ companies to provide placement services to fresh graduates.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2019</div>
-                        <h4 class="timeline-title">Expansion of Services</h4>
-                        <p class="timeline-description">Launched comprehensive skill development programs in collaboration with industry experts.</p>
+                        <div class="timeline-date">2020</div>
+                        <h4 class="timeline-title">Major Corporate Partnerships</h4>
+                        <p class="timeline-description">Established significant collaborations with corporate partners to enhance our placement services.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-date">2021</div>
-                        <h4 class="timeline-title">First National Recognition</h4>
-                        <p class="timeline-description">Received the Education Innovation Award for our unique training methodologies.</p>
+                        <h4 class="timeline-title">First Government & University Collaborations</h4>
+                        <p class="timeline-description">Initiated our first partnerships with government bodies and universities to expand our reach and impact.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-date">2023</div>
-                        <h4 class="timeline-title">PAC Insider Business Award</h4>
-                        <p class="timeline-description">Recognized as the Best Placements & Skill Development Service Provider in India.</p>
+                        <div class="timeline-date">2022</div>
+                        <h4 class="timeline-title">First Recognition from APAC</h4>
+                        <p class="timeline-description">Received our first APAC Insider Business Award, recognizing our excellence in placement and skill development services.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Partners Section - Row Style -->
-    <section class="partners-section py-5">
+    <!-- Our Government Partners Section -->
+    <section class="government-partners-section py-5" style="background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%); position: relative; overflow: hidden;">
         <div class="container">
-            <h2 class="section-title">Our <span>Partners</span> & Recruiters</h2>
+            <h2 class="section-title">Our <span>Government</span> Partners</h2>
 
-            <!-- Partners Row Layout -->
-            <div class="partners-row-container mt-5">
-                <div class="partners-row">
-                    <!-- Partners logos in a single row -->
-                    <div class="partner-logo-item">
-                        <img src="img/logos/ibm.svg" alt="IBM logo">
+            <!-- Government Partners Slider -->
+            <div class="govt-partners-slider-container mt-5">
+                <div class="swiper govt-partners-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/logos/DSCI.png" alt="DSCI logo" class="partner-logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/logos/prerna.webp" alt="Prerna logo" class="partner-logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/logos/apsche.png" alt="APSCHE logo" class="partner-logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/logos/logo.png" alt="Logo" class="partner-logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/logos/niitfoundatinLogonew.png" alt="NIIT Foundation logo" class="partner-logo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/logos/punjab.png" alt="Punjab logo" class="partner-logo">
+                        </div>
                     </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/oracle1.svg" alt="Oracle logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/tcs.svg" alt="TCS logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/cognizants-logo.svg" alt="Cognizant logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/wipro.svg" alt="Wipro logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/hgs.svg" alt="HGS logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/niit.svg" alt="NIIT logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/AICTE Logo Vector.svg" alt="AICTE logo">
-                    </div>
-                </div>
-                <!-- Additional logos in a second row if needed -->
-                <div class="partners-row mt-4">
-                    <div class="partner-logo-item">
-                        <img src="img/logos/Genpact_logo.svg" alt="Genpact logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/infosys-1.svg" alt="Infosys logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/bajaj.svg" alt="Bajaj logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/AIF-logo.png" alt="AIF logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/logo.png" alt="Logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/niitfoundatinLogonew.png" alt="NIIT Foundation logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/punjab.png" alt="Punjab logo">
-                    </div>
-                    <div class="partner-logo-item">
-                        <img src="img/logos/DSCI.jpg" alt="DSCI">
-                    </div>
+                    <!-- Add pagination -->
+                    <div class="swiper-pagination govt-partners-slider-pagination"></div>
+                    <!-- Add navigation arrows -->
+                    <div class="swiper-button-next govt-partners-slider-button-next"></div>
+                    <div class="swiper-button-prev govt-partners-slider-button-prev"></div>
                 </div>
             </div>
 
-            <!-- Partners Slider for Mobile -->
-            <div class="swiper partners-slider d-md-none mt-5">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/tcs.svg" alt="TCS">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/infosys-1.svg" alt="Infosys">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/cognizants-logo.svg" alt="Cognizant">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/wipro.svg" alt="Wipro">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/capgemini.svg" alt="Capgemini">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/deutsche.svg" alt="Deutsche Bank">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/ibm.svg" alt="IBM">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/oracle.svg" alt="Oracle">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/DSCI.jpg" alt="DSCI">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/AIF-logo.png" alt="AIF logo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/logo.png" alt="Logo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/niitfoundatinLogonew.png" alt="NIIT Foundation logo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="partner-logo">
-                            <img src="img/logos/punjab.png" alt="Punjab logo">
-                        </div>
-                    </div>
-                </div>
-                <!-- Add pagination -->
-                <div class="swiper-pagination partners-slider-pagination"></div>
-                <!-- Add navigation arrows -->
-                <div class="swiper-button-next partners-slider-button-next"></div>
-                <div class="swiper-button-prev partners-slider-button-prev"></div>
-            </div>
+            <style>
+                /* Government Partners Slider Styles */
+                .govt-partners-slider-container {
+                    padding: 20px 0;
+                    position: relative;
+                }
+
+                .govt-partners-slider {
+                    padding: 30px 50px;
+                }
+
+                .govt-partners-slider .swiper-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 180px;
+                }
+
+                .partner-logo {
+                    max-height: 120px;
+                    max-width: 90%;
+                    object-fit: contain;
+                    transition: all 0.3s ease;
+                    background: white;
+                    border-radius: 15px;
+                    padding: 20px;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                }
+
+                .partner-logo:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                }
+
+                .govt-partners-slider .swiper-button-next,
+                .govt-partners-slider .swiper-button-prev {
+                    color: #0d6efd;
+                    background: white;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                }
+
+                .govt-partners-slider .swiper-button-next:after,
+                .govt-partners-slider .swiper-button-prev:after {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                .govt-partners-slider .swiper-button-next:hover,
+                .govt-partners-slider .swiper-button-prev:hover {
+                    background: #0d6efd;
+                    color: white;
+                    transform: scale(1.1);
+                }
+
+                .govt-partners-slider .swiper-pagination-bullet {
+                    background: #0d6efd;
+                    opacity: 0.5;
+                }
+
+                .govt-partners-slider .swiper-pagination-bullet-active {
+                    opacity: 1;
+                    background: #0d6efd;
+                    transform: scale(1.2);
+                }
+
+                @media (max-width: 768px) {
+                    .govt-partners-slider {
+                        padding: 20px 40px;
+                    }
+
+                    .govt-partners-slider .swiper-slide {
+                        height: 150px;
+                    }
+
+                    .partner-logo {
+                        max-height: 100px;
+                        padding: 15px;
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .govt-partners-slider {
+                        padding: 15px 30px;
+                    }
+
+                    .govt-partners-slider .swiper-slide {
+                        height: 120px;
+                    }
+
+                    .partner-logo {
+                        max-height: 80px;
+                        padding: 10px;
+                    }
+                }
+            </style>
         </div>
-
-        <style>
-            /* Partners Slider Styles for Mobile */
-            .partners-section {
-                background: linear-gradient(135deg, #f0f4f8 0%, #d7e3fc 100%);
-                padding: 80px 0;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .partners-slider {
-                padding: 30px 50px;
-                margin-top: 40px;
-            }
-
-            .partners-slider .swiper-slide {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 120px;
-            }
-
-            .partners-slider .partner-logo {
-                height: 100%;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: white;
-                border-radius: 15px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                padding: 15px;
-                transition: all 0.3s ease;
-            }
-
-            .partners-slider .partner-logo:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            }
-
-            .partners-slider .partner-logo img {
-                max-height: 70px;
-                max-width: 80%;
-                object-fit: contain;
-                filter: grayscale(100%);
-                opacity: 0.7;
-                transition: all 0.3s ease;
-            }
-
-            .partners-slider .partner-logo:hover img {
-                filter: grayscale(0%);
-                opacity: 1;
-            }
-
-            .partners-slider .swiper-button-next,
-            .partners-slider .swiper-button-prev {
-                color: #0d6efd;
-                background: white;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
-
-            .partners-slider .swiper-button-next:after,
-            .partners-slider .swiper-button-prev:after {
-                font-size: 18px;
-                font-weight: bold;
-            }
-
-            .partners-slider .swiper-button-next:hover,
-            .partners-slider .swiper-button-prev:hover {
-                background: #0d6efd;
-                color: white;
-                transform: scale(1.1);
-            }
-
-            .partners-slider .swiper-pagination-bullet {
-                background: #0d6efd;
-                opacity: 0.5;
-            }
-
-            .partners-slider .swiper-pagination-bullet-active {
-                opacity: 1;
-                background: #0d6efd;
-                transform: scale(1.2);
-            }
-
-            @media (max-width: 768px) {
-                .partners-slider {
-                    padding: 20px 40px;
-                }
-
-                .partners-slider .swiper-slide {
-                    height: 100px;
-                }
-
-                .partners-slider .partner-logo img {
-                    max-height: 60px;
-                }
-            }
-
-            @media (max-width: 576px) {
-                .partners-slider {
-                    padding: 15px 30px;
-                }
-
-                .partners-slider .swiper-slide {
-                    height: 80px;
-                }
-
-                .partners-slider .partner-logo img {
-                    max-height: 50px;
-                }
-            }
-        </style>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -2483,245 +2413,154 @@
                 });
                 console.log('Government projects slider initialization attempted');
 
-                // Initialize Partners Slider
-                const partnersSlider = new Swiper('.partners-slider', {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+                // Initialize Government Partners Slider
+                const govtPartnersSlider = new Swiper('.govt-partners-slider', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
                     loop: true,
                     speed: 800,
                     autoplay: {
-                        delay: 2000,
+                        delay: 3000,
                         disableOnInteraction: false,
                     },
+                    // Add consistent timing between slides
+                    autoplaySpeed: 3000,
                     pagination: {
-                        el: '.partners-slider-pagination',
+                        el: '.govt-partners-slider-pagination',
                         clickable: true,
                     },
                     navigation: {
-                        nextEl: '.partners-slider-button-next',
-                        prevEl: '.partners-slider-button-prev',
+                        nextEl: '.govt-partners-slider-button-next',
+                        prevEl: '.govt-partners-slider-button-prev',
                     },
                     breakpoints: {
-                        640: {
-                            slidesPerView: 3,
+                        576: {
+                            slidesPerView: 2,
                             spaceBetween: 20,
                         },
                         768: {
-                            slidesPerView: 4,
+                            slidesPerView: 3,
                             spaceBetween: 30,
                         },
-                        1024: {
+                        992: {
+                            slidesPerView: 4,
+                            spaceBetween: 40,
+                        },
+                        1200: {
                             slidesPerView: 5,
-                            spaceBetween: 30,
+                            spaceBetween: 50,
                         },
                     },
                     on: {
                         init: function() {
-                            console.log('Partners slider initialized');
+                            console.log('Government partners slider initialized');
+                        },
+                        slideChange: function() {
+                            // Ensure consistent timing between slides
+                            this.autoplay.stop();
+                            this.autoplay.start();
                         }
                     }
                 });
-                console.log('Partners slider initialization attempted');
+                console.log('Government partners slider initialization attempted');
+
+                // Force start the autoplay immediately
+                govtPartnersSlider.autoplay.start();
+
+
             }, 500); // Small delay to ensure DOM is fully ready
         });
     </script>
 
-    <!-- Government Image Hover and Scroll Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get all government project images
-            const govtImages = document.querySelectorAll('.govt-project-image');
+            // Function to handle image hover and scroll functionality
+            function setupImageScroll(imageId) {
+                const image = document.getElementById(imageId);
+                const container = image.closest('.govt-image-container');
+                const scrollUp = container.querySelector('.scroll-up');
+                const scrollDown = container.querySelector('.scroll-down');
+                let scrollPosition = 0;
+                const scrollArrows = container.querySelector('.scroll-arrows');
 
-            govtImages.forEach(img => {
-                // Get the container and scroll arrows for this image
-                const container = img.closest('.govt-image-container');
-                const scrollArrows = container ? container.querySelector('.scroll-arrows') : null;
-                const upArrow = scrollArrows ? scrollArrows.querySelector('.scroll-up') : null;
-                const downArrow = scrollArrows ? scrollArrows.querySelector('.scroll-down') : null;
-
-                // Make scroll arrows visible only on hover
-                if (scrollArrows) {
-
-                    // Add a click handler to the image to toggle zoom
-                    img.addEventListener('click', function() {
-                        if (this.classList.contains('zoomed')) {
-                            this.classList.remove('zoomed');
-                            this.style.transform = '';
-                            this.setAttribute('data-translateY', '0');
-                        } else {
-                            this.classList.add('zoomed');
-                            this.style.transformOrigin = 'center top';
-                            this.style.transform = 'scale(2.2)';
-                            this.setAttribute('data-translateY', '0');
-                        }
-                    });
+                // Function to update scroll arrows visibility
+                function updateArrowsVisibility() {
+                    const maxScroll = image.scrollHeight - container.clientHeight;
+                    scrollUp.style.opacity = scrollPosition <= 0 ? '0.5' : '1';
+                    scrollDown.style.opacity = scrollPosition >= maxScroll ? '0.5' : '1';
                 }
 
-                // Add scroll functionality for the arrows
-                if (upArrow) {
-                    upArrow.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        // When up arrow is clicked, scroll the image up
-                        const currentTransform = getComputedStyle(img).transform;
-                        let currentScale = 1;
-
-                        // Set transform origin to top center
-                        img.style.transformOrigin = 'center top';
-
-                        // If the image is already zoomed (has scale transform)
-                        if (img.classList.contains('zoomed')) {
-                            // Scroll up by adjusting the translateY value
-                            const currentTranslateY = parseInt(img.getAttribute('data-translateY') || '0');
-                            // Only allow scrolling up if not at the top already
-                            if (currentTranslateY < 0) {
-                                const newTranslateY = Math.min(0, currentTranslateY + 50); // Move up but not beyond 0
-                                img.setAttribute('data-translateY', newTranslateY);
-                                img.style.transform = `scale(2.2) translateY(${newTranslateY}px)`;
-
-                                // If we've reached the top, provide visual feedback
-                                if (newTranslateY === 0) {
-                                    upArrow.style.opacity = '0.5';
-                                    setTimeout(() => { upArrow.style.opacity = '1'; }, 300);
-                                }
-                            } else {
-                                // Already at top, provide visual feedback
-                                upArrow.style.opacity = '0.5';
-                                setTimeout(() => { upArrow.style.opacity = '1'; }, 300);
-                            }
-                        } else {
-                            // If not zoomed, zoom in first
-                            img.classList.add('zoomed');
-                            img.setAttribute('data-translateY', '0');
-                            img.style.transform = 'scale(2.2)';
-                        }
-
-                        console.log('Up arrow clicked, new transform:', img.style.transform);
-                    });
+                // Function to handle zoom in
+                function zoomIn() {
+                    image.style.transform = 'scale(2.5)';
+                    scrollArrows.style.opacity = '1';
+                    updateArrowsVisibility();
                 }
 
-                if (downArrow) {
-                    downArrow.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        // When down arrow is clicked, scroll the image down
-
-                        // Set transform origin to top center
-                        img.style.transformOrigin = 'center top';
-
-                        // If the image is already zoomed (has scale transform)
-                        if (img.classList.contains('zoomed')) {
-                            // Scroll down by adjusting the translateY value
-                            const currentTranslateY = parseInt(img.getAttribute('data-translateY') || '0');
-                            // Calculate the minimum scroll value (most negative value allowed)
-                            const imgHeight = img.offsetHeight;
-                            const containerHeight = container.offsetHeight;
-                            const zoomedHeight = imgHeight * 2.2; // Scale factor matches the transform scale
-                            const minScrollValue = -Math.max(0, zoomedHeight - containerHeight);
-
-                            // If we're already at or beyond the minimum scroll value, don't allow further scrolling
-                            if (currentTranslateY <= minScrollValue) {
-                                // Already at bottom, provide visual feedback
-                                downArrow.style.opacity = '0.5';
-                                setTimeout(() => { downArrow.style.opacity = '1'; }, 300);
-                                // Add a subtle shake animation to indicate we've reached the bottom
-                                downArrow.classList.add('shake-animation');
-                                setTimeout(() => { downArrow.classList.remove('shake-animation'); }, 500);
-                                return; // Exit the function early
-                            }
-
-                            // Calculate the new translate Y position (don't go beyond minScrollValue)
-                            const newTranslateY = Math.max(minScrollValue, currentTranslateY - 50); // Move down but not beyond min
-                            img.setAttribute('data-translateY', newTranslateY);
-                            img.style.transform = `scale(2.2) translateY(${newTranslateY}px)`;
-
-                            // If we've reached the bottom, provide visual feedback
-                            if (newTranslateY <= minScrollValue) {
-                                downArrow.style.opacity = '0.5';
-                                setTimeout(() => { downArrow.style.opacity = '1'; }, 300);
-                                // Add a subtle shake animation to indicate we've reached the bottom
-                                downArrow.classList.add('shake-animation');
-                                setTimeout(() => { downArrow.classList.remove('shake-animation'); }, 500);
-                            }
-                        } else {
-                            // If not zoomed, zoom in first
-                            img.classList.add('zoomed');
-                            img.setAttribute('data-translateY', '0');
-                            img.style.transform = 'scale(2.2)';
-                        }
-
-                        console.log('Down arrow clicked, new transform:', img.style.transform);
-                    });
+                // Function to handle zoom out
+                function zoomOut() {
+                    image.style.transform = 'scale(1)';
+                    scrollPosition = 0;
+                    image.style.transform = 'translateY(0)';
+                    scrollArrows.style.opacity = '0';
                 }
 
-                // Add wheel event for scrolling with mouse wheel when hovering
-                img.addEventListener('wheel', function(e) {
-                    if (this.matches(':hover') && this.classList.contains('zoomed')) {
+                // Show/hide scroll arrows on hover
+                container.addEventListener('mouseenter', zoomIn);
+                container.addEventListener('mouseleave', zoomOut);
+
+                // Handle scroll up button - Go to top
+                scrollUp.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    scrollPosition = 0; // Go to top
+                    image.style.transform = `scale(2.5) translateY(0)`;
+                    updateArrowsVisibility();
+                });
+
+                // Handle scroll down button - Go to bottom
+                scrollDown.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const maxScroll = image.scrollHeight - container.clientHeight;
+                    scrollPosition = maxScroll; // Go to bottom
+                    image.style.transform = `scale(2.5) translateY(${-maxScroll}px)`;
+                    updateArrowsVisibility();
+                });
+
+                // Handle smooth mouse wheel scrolling
+                container.addEventListener('wheel', (e) => {
+                    if (image.style.transform.includes('scale(2.5)')) {
                         e.preventDefault();
-                        const currentTranslateY = parseInt(this.getAttribute('data-translateY') || '0');
-                        const imgHeight = this.offsetHeight;
-                        const containerHeight = this.closest('.govt-image-container').offsetHeight;
-                        // Calculate the minimum scroll value (most negative value allowed)
-                        const zoomedHeight = imgHeight * 2.2; // Scale factor matches the transform scale
-                        const minScrollValue = -Math.max(0, zoomedHeight - containerHeight);
-
-                        // If we're already at or beyond the minimum scroll value and trying to scroll down, don't allow further scrolling
-                        if (e.deltaY > 0 && currentTranslateY <= minScrollValue) {
-                            // Already at bottom, provide visual feedback
-                            if (downArrow) {
-                                downArrow.style.opacity = '0.5';
-                                setTimeout(() => { downArrow.style.opacity = '1'; }, 300);
-                                // Add a subtle shake animation to indicate we've reached the bottom
-                                downArrow.classList.add('shake-animation');
-                                setTimeout(() => { downArrow.classList.remove('shake-animation'); }, 500);
-                            }
-                            return; // Exit the function early
-                        }
-
-                        // Get the container and scroll arrows for this image
-                        const container = this.closest('.govt-image-container');
-                        const scrollArrows = container ? container.querySelector('.scroll-arrows') : null;
-                        const upArrow = scrollArrows ? scrollArrows.querySelector('.scroll-up') : null;
-                        const downArrow = scrollArrows ? scrollArrows.querySelector('.scroll-down') : null;
-
-                        // Calculate new translateY based on wheel direction
-                        let newTranslateY;
-                        if (e.deltaY > 0) { // Scrolling down
-                            // Calculate new position (don't go beyond minScrollValue)
-                            newTranslateY = Math.max(minScrollValue, currentTranslateY - 30);
-                            this.setAttribute('data-translateY', newTranslateY);
-                            this.style.transform = `scale(2.2) translateY(${newTranslateY}px)`;
-
-                            // If we've reached the bottom, provide visual feedback
-                            if (newTranslateY <= minScrollValue && downArrow) {
-                                downArrow.style.opacity = '0.5';
-                                setTimeout(() => { downArrow.style.opacity = '1'; }, 300);
-                                // Add a subtle shake animation to indicate we've reached the bottom
-                                downArrow.classList.add('shake-animation');
-                                setTimeout(() => { downArrow.classList.remove('shake-animation'); }, 500);
-                            }
-                        } else { // Scrolling up
-                            if (currentTranslateY < 0) {
-                                newTranslateY = Math.min(0, currentTranslateY + 30);
-                                this.setAttribute('data-translateY', newTranslateY);
-                                this.style.transform = `scale(2.2) translateY(${newTranslateY}px)`;
-
-                                // If we've reached the top, provide visual feedback
-                                if (newTranslateY === 0 && upArrow) {
-                                    upArrow.style.opacity = '0.5';
-                                    setTimeout(() => { upArrow.style.opacity = '1'; }, 300);
-                                }
-                            } else if (upArrow) {
-                                // Already at top, provide visual feedback
-                                upArrow.style.opacity = '0.5';
-                                setTimeout(() => { upArrow.style.opacity = '1'; }, 300);
-                            }
-                        }
+                        const maxScroll = image.scrollHeight - container.clientHeight;
+                        scrollPosition = Math.max(0, Math.min(maxScroll, scrollPosition + e.deltaY));
+                        image.style.transform = `scale(2.5) translateY(${-scrollPosition}px)`;
+                        updateArrowsVisibility();
                     }
                 });
-            });
+
+                // Add hover effects to arrows
+                [scrollUp, scrollDown].forEach(arrow => {
+                    arrow.addEventListener('mouseenter', () => {
+                        if (image.style.transform.includes('scale(2.5)')) {
+                            arrow.style.transform = 'scale(1.2)';
+                        }
+                    });
+                    arrow.addEventListener('mouseleave', () => {
+                        arrow.style.transform = 'scale(1)';
+                    });
+                });
+
+                // Initialize arrows visibility
+                updateArrowsVisibility();
+            }
+
+            // Initialize scroll functionality for both government project images
+            setupImageScroll('punjab-govt-img');
+            setupImageScroll('andhra-govt-img');
         });
     </script>
+
 </body>
 
 </html>

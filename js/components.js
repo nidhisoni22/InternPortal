@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .navbar-brand img.navbar-logo {
-            height: 48px;
+            height: 38px;
             width: auto;
             transition: transform 0.3s ease;
         }
@@ -111,6 +111,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
         .navbar-logo-animation {
             animation: logoPulse 1.5s ease-in-out;
+        }
+
+        /* Footer logo styles */
+        .footer-logo a {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo-img {
+            height: 48px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo a:hover .footer-logo-img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 576px) {
+            .footer-logo-img {
+                height: 40px;
+            }
+            .footer-logo a span {
+                font-size: 1.5rem;
+            }
         }
 
         .navbar-nav .nav-link {
@@ -214,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container d-flex justify-content-center">
             <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: #ffffff; border-radius: 50px; padding: 10px 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); width: 95%; max-width: 1140px; display: flex !important;">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="img/logos/E@V.png" alt="E@V Logo" class="navbar-logo me-3" style="height: 48px; width: auto; transition: all 0.3s ease; vertical-align: middle;">
+                <img src="img/logos/E@V.png" alt="E@V Logo" class="navbar-logo me-3" style="height: 38px; width: auto; transition: all 0.3s ease; vertical-align: middle;">
                 <span class="brand-text">InternPortal</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -252,14 +277,13 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-logo"><a href="index.html" style="color: white; text-decoration: none;">InternPortal</a></h3>
+                    <h3 class="footer-logo">
+                        <a href="index.html" style="color: white; text-decoration: none;" class="d-flex align-items-center">
+                            <img src="img/logos/E@V.png" alt="E@V Logo" class="footer-logo-img me-3" style="height: 48px; width: auto;">
+                            <span>InternPortal</span>
+                        </a>
+                    </h3>
                     <p>Connecting talented students with top companies for meaningful internship experiences that shape future careers</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h5>For Students</h5>
@@ -287,18 +311,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="footer-links">
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
                         <li><a href="#">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
             <hr class="mt-4 mb-4">
             <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
+                <div class="col-12 text-center">
                     <p class="mb-0">© 2023 InternPortal. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for students worldwide</p>
                 </div>
             </div>
         </div>
@@ -308,11 +328,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set active nav link
     setActiveNavLink();
 
-    // Add animation to the logo
+    // Add animation to the logos
     setTimeout(() => {
+        // Navbar logo animation
         const navbarLogo = document.querySelector('.navbar-logo');
         if (navbarLogo) {
             navbarLogo.classList.add('navbar-logo-animation');
+        }
+
+        // Footer logo animation
+        const footerLogo = document.querySelector('.footer-logo-img');
+        if (footerLogo) {
+            footerLogo.classList.add('navbar-logo-animation');
         }
     }, 500);
 
