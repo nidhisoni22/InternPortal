@@ -481,12 +481,466 @@
                 <!-- Pagination removed for continuous movement -->
             </div>
 
-            <div class="swiper testimonialSwiperCircular">
-                <div class="swiper-wrapper">
-                    <!-- Circular testimonial cards will be dynamically added here -->
+            <h4 class="text-center mb-4 mt-5">More Success Stories</h4>
+
+            <!-- Smooth infinite slider container -->
+            <div class="smooth-slider-container" style="position: relative; overflow: hidden; width: 100%; height: auto; min-height: 320px; margin-top: 30px; margin-bottom: 30px;">
+                <!-- Container to ensure 3 slides are visible at a time -->
+                <div class="carousel-container" style="max-width: 1110px; margin: 0 auto; position: relative;">
+                <!-- Add responsive styles for the carousel container -->
+                <style>
+                    @media (max-width: 1200px) {
+                        .carousel-container {
+                            max-width: 740px; /* Show 2 slides on medium screens */
+                        }
+                    }
+                    @media (max-width: 768px) {
+                        .carousel-container {
+                            max-width: 370px; /* Show 1 slide on small screens */
+                        }
+                    }
+                </style>
+                <!-- Slider track that will be animated -->
+                <div class="smooth-slider-track" style="display: flex; position: absolute; left: 0; top: 0; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); width: max-content;">
+                    <!-- Prepended Testimonial 4 (for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">NET Developer Interns helps us to build software using the .NET framework, JavaScript, JQuery, HTML5, and other control library.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Madhavi</h5>
+                                        <p class="testimonial-role mb-0">.NET Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prepended Testimonial 3 (for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">Through the intership I'm improve my skills and this company useful for me a lot i learned very easily</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Gaythri</h5>
+                                        <p class="testimonial-role mb-0">Web Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prepended Testimonial 2 (for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">It was nice getting job from this platform. Even though they check our technical skills and conduct interview based on it.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Sandeep</h5>
+                                        <p class="testimonial-role mb-0">Software Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prepended Testimonial 1 (for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">I had a great experience here and learn a very good information, It being helpful to my career.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Kranthi</h5>
+                                        <p class="testimonial-role mb-0">Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">I had a great experience here and learn a very good information, It being helpful to my career.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Kranthi</h5>
+                                        <p class="testimonial-role mb-0">Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">It was nice getting job from this platform. Even though they check our technical skills and conduct interview based on it.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Sandeep</h5>
+                                        <p class="testimonial-role mb-0">Software Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">Through the intership I'm improve my skills and this company useful for me a lot i learned very easily</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Gaythri</h5>
+                                        <p class="testimonial-role mb-0">Web Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">NET Developer Interns helps us to build software using the .NET framework, JavaScript, JQuery, HTML5, and other control library.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Madhavi</h5>
+                                        <p class="testimonial-role mb-0">.NET Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 (duplicate of 1 for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">I had a great experience here and learn a very good information, It being helpful to my career.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Kranthi</h5>
+                                        <p class="testimonial-role mb-0">Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 (duplicate of 2 for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">It was nice getting job from this platform. Even though they check our technical skills and conduct interview based on it.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Sandeep</h5>
+                                        <p class="testimonial-role mb-0">Software Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 (duplicate of 3 for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">Through the intership I'm improve my skills and this company useful for me a lot i learned very easily</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Gaythri</h5>
+                                        <p class="testimonial-role mb-0">Web Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 (duplicate of 4 for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">NET Developer Interns helps us to build software using the .NET framework, JavaScript, JQuery, HTML5, and other control library.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Madhavi</h5>
+                                        <p class="testimonial-role mb-0">.NET Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 9 (duplicate of 1 for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">I had a great experience here and learn a very good information, It being helpful to my career.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Kranthi</h5>
+                                        <p class="testimonial-role mb-0">Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 10 (duplicate of 2 for infinite loop) -->
+                    <div class="testimonial-card" style="flex: 0 0 340px; margin-right: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; height: 300px;">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text mb-4">It was nice getting job from this platform. Even though they check our technical skills and conduct interview based on it.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-name-rating">
+                                    <div>
+                                        <h5 class="testimonial-name mb-1">Sandeep</h5>
+                                        <p class="testimonial-role mb-0">Software Developer Intern</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Pagination removed for continuous movement -->
+                </div>
             </div>
+
+            <!-- Script to control the smooth infinite slider -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Get the slider track element
+                    const sliderTrack = document.querySelector('.smooth-slider-track');
+                    const sliderContainer = document.querySelector('.smooth-slider-container');
+
+                    // Calculate the width of prepended slides (4 slides * 370px each)
+                    const prependedSlidesWidth = 4 * 370; // 4 prepended slides
+
+                    // Set initial position to show the original slides (after the prepended ones)
+                    let position = -prependedSlidesWidth;
+
+                    // Width of a single slide (340px + 30px margin)
+                    const slideWidth = 370;
+
+                    // Number of original slides (not counting duplicates)
+                    const slideCount = 4;
+
+                    // Total number of slides including duplicates
+                    const totalSlides = 14; // 4 prepended + 4 original + 6 appended
+
+                    // Animation speed (pixels per frame)
+                    let speed = 0.5; // Match the first carousel speed
+
+                    // Adjust speed and visible slides based on screen width
+                    function updateSpeed() {
+                        const windowWidth = window.innerWidth;
+                        if (windowWidth < 768) {
+                            // Slower on mobile
+                            speed = 0.3;
+                        } else if (windowWidth < 1200) {
+                            // Medium speed on tablets
+                            speed = 0.4;
+                        } else {
+                            // Default speed on desktops
+                            speed = 0.5;
+                        }
+                    }
+
+                    // Set initial speed
+                    updateSpeed();
+
+                    // Last timestamp for animation
+                    let lastTimestamp = 0;
+
+                    // Function to animate the slider
+                    function animateSlider(timestamp) {
+                        // Calculate time difference for smooth animation regardless of frame rate
+                        if (!lastTimestamp) lastTimestamp = timestamp;
+                        const elapsed = timestamp - lastTimestamp;
+                        lastTimestamp = timestamp;
+
+                        // Move the slider smoothly (adjust speed based on elapsed time)
+                        position -= speed * (elapsed / 16); // Normalize to ~60fps
+
+                        // If we've moved a full set of slides, reset to maintain the illusion of infinite scrolling
+                        if (position <= -(prependedSlidesWidth + slideWidth * slideCount)) {
+                            // Calculate exact offset to make the jump invisible
+                            const offset = position + prependedSlidesWidth + slideWidth * slideCount;
+                            // Reset to the position of the prepended slides plus the offset
+                            position = -prependedSlidesWidth + offset;
+
+                            // Disable transition, make the jump, then re-enable
+                            requestAnimationFrame(() => {
+                                sliderTrack.style.transition = 'none';
+                                sliderTrack.style.transform = `translate3d(${position}px, 0, 0)`;
+
+                                // Force reflow to make the transition removal take effect
+                                sliderTrack.offsetHeight;
+
+                                // Re-enable transitions on the next frame
+                                requestAnimationFrame(() => {
+                                    sliderTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+                                });
+                            });
+                        }
+
+                        // If we've scrolled backward into the prepended slides
+                        if (position > -prependedSlidesWidth) {
+                            // Calculate exact offset to make the jump invisible
+                            const offset = position + prependedSlidesWidth;
+                            // Reset to the end of the original slides plus the offset
+                            position = -(prependedSlidesWidth + slideWidth * (slideCount - 1)) + offset;
+
+                            // Disable transition, make the jump, then re-enable
+                            requestAnimationFrame(() => {
+                                sliderTrack.style.transition = 'none';
+                                sliderTrack.style.transform = `translate3d(${position}px, 0, 0)`;
+
+                                // Force reflow
+                                sliderTrack.offsetHeight;
+
+                                // Re-enable transitions on the next frame
+                                requestAnimationFrame(() => {
+                                    sliderTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+                                });
+                            });
+                        }
+
+                        // Apply the transform with hardware acceleration for smoother animation
+                        sliderTrack.style.transform = `translate3d(${position}px, 0, 0)`;
+                        sliderTrack.style.willChange = 'transform';
+
+                        // Request the next animation frame
+                        requestAnimationFrame(animateSlider);
+                    }
+
+                    // Pause animation on hover
+                    document.querySelector('.carousel-container').addEventListener('mouseenter', function() {
+                        speed = 0; // Stop the animation
+                    });
+
+                    // Resume animation on mouse leave
+                    document.querySelector('.carousel-container').addEventListener('mouseleave', function() {
+                        // Resume with the appropriate speed for the current screen size
+                        updateSpeed();
+                    });
+
+                    // Handle window resize to ensure smooth animation continues
+                    window.addEventListener('resize', function() {
+                        // Update animation speed based on new screen size
+                        updateSpeed();
+
+                        // Reset position on resize to prevent visual glitches
+                        // Reset to the position of the prepended slides
+                        position = -prependedSlidesWidth;
+                        sliderTrack.style.transition = 'none';
+                        sliderTrack.style.transform = `translate3d(${position}px, 0, 0)`;
+
+                        // Force reflow
+                        sliderTrack.offsetHeight;
+
+                        // Re-enable transitions
+                        sliderTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+                    });
+
+                    // Start the animation
+                    requestAnimationFrame(animateSlider);
+                });
+            </script>
         </div>
     </section>
 
@@ -503,5 +957,6 @@
     <script src="js/components.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+    <script src="js/ticker.js"></script>
 </body>
 </html>
