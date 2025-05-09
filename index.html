@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="css/stats-enhanced.css">
     <!-- Partners Carousel CSS -->
     <link rel="stylesheet" href="css/partners-carousel.css">
+    <!-- Responsive Fixes CSS -->
+    <link rel="stylesheet" href="css/responsive-fixes.css">
     <style>
         html {
             width: 100%;
@@ -40,6 +42,14 @@
             padding: 0;
             min-height: 100%;
             position: relative;
+        }
+
+        @media (max-width: 991.98px) {
+            html, body {
+                width: 100vw;
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
         }
 
         /* Fix for extra space on right side */
@@ -117,7 +127,7 @@
                 </div>
 
                 <!-- Illustration (Right Side) -->
-                <div class="col-lg-7 d-none d-lg-block position-relative">
+                <div class="col-lg-7 position-relative">
                     <!-- Trusted badge -->
                     <div class="trusted-badge-container">
                         <div class="trusted-badge">
@@ -129,6 +139,14 @@
                         <!-- Main illustration -->
                         <div class="main-illustration">
                             <!-- This will be styled with CSS background -->
+                        </div>
+
+                        <!-- Floating Apply Now UI -->
+                        <div class="floating-apply-now">
+                            <div class="apply-now-pulse"></div>
+                            <a href="internship.html" class="apply-now-button">
+                                <i class="fas fa-paper-plane"></i> Apply Now
+                            </a>
                         </div>
 
                         <!-- Category bubbles -->
@@ -145,9 +163,7 @@
 
                     <!-- Buttons moved below the illustration -->
                     <div class="illustration-buttons text-center mt-3">
-                        <a href="internship.html" class="btn btn-hero me-3">Find Internship</a>
                         <a href="#" class="btn btn-outline-hero">Get Started</a>
-                    </div>
                     </div>
                 </div>
             </div>

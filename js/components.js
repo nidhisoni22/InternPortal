@@ -51,9 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .navbar {
                 background-color: white !important;
                 padding: 0 !important;
-                width: 100% !important;
+                width: 100vw !important;
                 left: 0 !important;
                 right: 0 !important;
+                max-width: 100vw !important;
             }
 
             .container-fluid {
@@ -78,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
         @media (max-width: 991.98px) {
             .navbar-container {
                 border-radius: 0 !important;
-                max-width: 100% !important;
-                width: 100% !important;
+                max-width: 100vw !important;
+                width: 100vw !important;
                 margin: 0 !important;
                 padding: 10px 20px !important;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
@@ -210,10 +211,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .navbar-collapse {
                 background-color: #ffffff;
                 padding: 15px;
-                border-radius: 15px;
-                margin-top: 15px;
+                border-radius: 0;
+                margin-top: 0;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
                 width: 100%;
+                max-width: 100%;
+                left: 0;
+                right: 0;
+                position: absolute;
+                top: 100%;
             }
 
             .navbar-nav {
@@ -238,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Navbar - Simplified structure for better Bootstrap compatibility -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid px-0">
-            <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: white; padding: 8px 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 100%; margin: 0;">
+            <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: white; padding: 8px 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 100%; margin: 0; box-sizing: border-box;">
                 <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
                     <img src="img/logos/InternBoot.png" alt="InternPortal Logo" class="navbar-logo me-2" style="height: 40px; width: auto; transition: all 0.3s ease; vertical-align: middle; filter: brightness(1.2);">
                 </a>
