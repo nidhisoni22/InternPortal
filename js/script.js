@@ -93,16 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start rotation
         setInterval(rotateHeadlines, 3000);
     }
-    // Navbar scroll effect
+    // Simple navbar scroll effect without direct style manipulation
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-            navbar.style.padding = '10px 0';
+            navbar?.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
-            navbar.style.padding = '20px 0';
+            navbar?.classList.remove('scrolled');
         }
     });
 

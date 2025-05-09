@@ -23,17 +23,9 @@ function setActiveNavLink() {
 
 // Load components when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the navbar
-    const navbar = document.querySelector('.navbar');
+    // Initialize components
 
-    // Add scroll event listener
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar?.classList.add('scrolled');
-        } else {
-            navbar?.classList.remove('scrolled');
-        }
-    });
+    // No custom scroll event listeners - keeping it simple
     // Add a style tag to ensure consistent navbar styling
     const styleTag = document.createElement('style');
     styleTag.textContent = `
@@ -53,16 +45,23 @@ document.addEventListener('DOMContentLoaded', function() {
             position: fixed;
             top: 0;
             z-index: 1030;
-            display: block !important;
         }
 
-        /* Navbar on scroll */
-        .navbar.scrolled {
-            padding: 8px 0;
-        }
+        @media (max-width: 991.98px) {
+            .navbar {
+                background-color: white !important;
+                padding: 0 !important;
+                width: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+            }
 
-        .navbar.scrolled .navbar-container {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+            .container-fluid {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
         }
 
         .navbar-container {
@@ -71,9 +70,23 @@ document.addEventListener('DOMContentLoaded', function() {
             border: none;
             padding: 8px 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 80%;
+            width: 100%;
             max-width: 900px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-container {
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 10px 20px !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+                position: relative !important;
+                left: 0 !important;
+                right: 0 !important;
+            }
         }
 
         .navbar-brand {
@@ -91,19 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: transform 0.3s ease;
         }
 
-        @media (max-width: 576px) {
-            .navbar-brand img.navbar-logo {
-                height: 40px;
-            }
-            .navbar-brand .brand-text {
-                font-size: 1.2rem;
-            }
-        }
-
-        .navbar-brand:hover {
-            color: var(--primary-color);
-        }
-
         .navbar-brand:hover img.navbar-logo {
             transform: scale(1.05);
         }
@@ -115,18 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
             100% { transform: scale(1); }
         }
 
-        @keyframes logoGlow {
-            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); filter: brightness(1); }
-            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); filter: brightness(1.1); }
-            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); filter: brightness(1); }
-        }
-
         .navbar-logo-animation {
             animation: logoPulse 1.5s ease-in-out;
-        }
-
-        .footer-logo-animation {
-            animation: logoGlow 3s infinite ease-in-out;
         }
 
         /* Footer logo styles */
@@ -155,23 +145,13 @@ document.addEventListener('DOMContentLoaded', function() {
             padding-left: 8px !important;
         }
 
-
-
         /* Footer bottom links hover effects */
         .row.align-items-center a:hover {
             color: #ffffff !important;
             text-decoration: underline !important;
         }
 
-        @media (max-width: 576px) {
-            .footer-logo-img {
-                height: 60px;
-            }
-            .footer-logo a span {
-                font-size: 1.8rem;
-            }
-        }
-
+        /* Navbar links styling */
         .navbar-nav .nav-link {
             color: #444 !important;
             font-weight: 500;
@@ -182,37 +162,16 @@ document.addEventListener('DOMContentLoaded', function() {
             letter-spacing: 0.3px;
             margin: 0 3px;
             border-radius: 6px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .navbar-nav .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: rgba(13, 110, 253, 0.08);
-            border-radius: 6px;
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover::before, .navbar-nav .nav-link.active::before {
-            width: 100%;
         }
 
         .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
             color: #0d6efd !important;
-            transform: translateY(-1px);
+            background-color: rgba(13, 110, 253, 0.08);
         }
 
         .navbar-nav .nav-link.active {
             font-weight: 600;
             position: relative;
-            color: #0d6efd !important;
-            background-color: rgba(13, 110, 253, 0.08);
         }
 
         .navbar-nav .nav-link.active::after {
@@ -227,43 +186,26 @@ document.addEventListener('DOMContentLoaded', function() {
             border-radius: 10px;
         }
 
-        /* Social icons styles removed */
-
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f0f7ff;
-            color: #0d6efd;
-        }
-
+        /* Mobile navbar styling */
         @media (max-width: 991.98px) {
             body {
-                padding-top: 90px;
+                padding-top: 70px;
             }
 
             .navbar {
-                padding: 15px 0;
+                padding: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
 
-            .navbar > .container {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                padding: 0 15px;
-                max-width: 100%;
+            .container, .container-fluid {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
-            .navbar-container {
-                border-radius: 20px;
-                padding: 10px 20px;
-                width: 95%;
-                max-width: 100%;
-            }
+            /* Navbar container styling moved to main CSS */
 
             .navbar-collapse {
                 background-color: #ffffff;
@@ -280,52 +222,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 text-align: center;
             }
 
-            /* Social icons media query removed */
-
             .navbar-toggler {
                 padding: 4px 8px;
                 font-size: 1rem;
                 border: none;
                 background-color: #f8f9fa;
                 border-radius: 8px;
+                z-index: 1050;
             }
         }
     `;
     document.head.appendChild(styleTag);
     // Insert navbar HTML
     document.getElementById('navbar-container').innerHTML = `
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent; box-shadow: none; display: block !important;" id="mainNavbar">
-        <div class="container d-flex justify-content-center">
-            <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: white; border-radius: 12px; padding: 8px 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 80%; max-width: 900px; display: flex !important; position: relative; overflow: hidden;">
-                <!-- Subtle accent elements -->
-                <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(13, 110, 253, 0.05) 0%, rgba(13, 110, 253, 0) 70%); border-radius: 50%;"></div>
-                <div style="position: absolute; bottom: -30px; left: 30%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(13, 110, 253, 0.03) 0%, rgba(13, 110, 253, 0) 70%); border-radius: 50%;"></div>
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="img/logos/InternBoot.png" alt="InternPortal Logo" class="navbar-logo me-2" style="height: 40px; width: auto; transition: all 0.3s ease; vertical-align: middle; filter: brightness(1.2);">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: rgba(0, 0, 0, 0.1);">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav" aria-labelledby="navbarToggler">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-home" href="index.html" style="color: #0d6efd; font-weight: 500; padding: 6px 12px; margin: 0 2px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; letter-spacing: 0.3px;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-internships" href="internship.html" style="color: #444; font-weight: 500; padding: 6px 12px; margin: 0 2px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; letter-spacing: 0.3px;">Internships</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-testimonials" href="achievements.html" style="color: #444; font-weight: 500; padding: 6px 12px; margin: 0 2px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; letter-spacing: 0.3px;">Achievements</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-about" href="about.html" style="color: #444; font-weight: 500; padding: 6px 12px; margin: 0 2px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; letter-spacing: 0.3px;">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-contact" href="contact.html" style="color: #444; font-weight: 500; padding: 6px 12px; margin: 0 2px; border-radius: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; letter-spacing: 0.3px;">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Navbar - Simplified structure for better Bootstrap compatibility -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid px-0">
+            <div class="navbar-container d-flex flex-wrap justify-content-between align-items-center" style="background: white; padding: 8px 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); width: 100%; max-width: 100%; margin: 0;">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                    <img src="img/logos/InternBoot.png" alt="InternPortal Logo" class="navbar-logo me-2" style="height: 40px; width: auto; transition: all 0.3s ease; vertical-align: middle; filter: brightness(1.2);">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-home" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-internships" href="internship.html">Internships</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-testimonials" href="achievements.html">Achievements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-about" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-contact" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -349,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="footer-logo">
                         <a href="index.html" style="color: white; text-decoration: none;" class="d-flex align-items-center">
                             <img src="img/logos/InternBoot.png" alt="InternPortal Logo" class="footer-logo-img me-3" style="height: 100px; width: auto; filter: brightness(1.2) contrast(1.1);">
-                            
+
                         </a>
                     </h3>
                     <p style="color: rgba(255, 255, 255, 0.95); margin-top: 1.5rem; font-size: 1.05rem; max-width: 90%;">Connecting talented students with top companies for meaningful internship experiences that shape future careers</p>
@@ -436,86 +374,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 500);
 
-    // Ensure Bootstrap's collapse functionality works properly
+    // Only set active nav link - let Bootstrap handle all toggle functionality
     setTimeout(() => {
-        // Make sure Bootstrap is loaded
-        if (typeof bootstrap !== 'undefined') {
-            // Initialize all collapse elements
-            const navbarCollapse = document.getElementById('navbarNav');
-            if (navbarCollapse) {
-                // Create a collapse instance
-                const collapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-
-                // Add event listener to close the menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    const navbarToggler = document.querySelector('.navbar-toggler');
-
-                    if (navbarCollapse.classList.contains('show') &&
-                        !navbarCollapse.contains(e.target) &&
-                        !navbarToggler.contains(e.target)) {
-                        collapse.hide();
-
-                        // Update aria-expanded attribute
-                        if (navbarToggler) {
-                            navbarToggler.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
-
-                // Fix for mobile menu toggle not working
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                if (navbarToggler) {
-                    navbarToggler.addEventListener('click', function() {
-                        collapse.toggle();
-                    });
-                }
-            }
-        } else {
-            console.warn('Bootstrap is not loaded. Navbar toggle may not work properly.');
-
-            // Fallback for when Bootstrap is not loaded
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            if (navbarToggler) {
-                navbarToggler.addEventListener('click', function() {
-                    const navbarCollapse = document.getElementById('navbarNav');
-                    if (navbarCollapse) {
-                        navbarCollapse.classList.toggle('show');
-                        const expanded = navbarToggler.getAttribute('aria-expanded') === 'true' || false;
-                        navbarToggler.setAttribute('aria-expanded', !expanded);
-                    }
-                });
-            }
-        }
-
-        // Add fixed positioning to navbar
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            navbar.classList.add('fixed-top');
-        }
-
-        // Ensure navbar is centered on all pages
-        const adjustNavbar = () => {
-            const container = document.querySelector('.navbar > .container');
-            if (container) {
-                container.style.display = 'flex';
-                container.style.justifyContent = 'center';
-                container.style.width = '100%';
-            }
-        };
-
-        // Run on load and on resize
-        adjustNavbar();
-        window.addEventListener('resize', adjustNavbar);
-
         // Call setActiveNavLink to highlight the current page in the navbar
         setActiveNavLink();
+    }, 300);
 
-        // Make sure the navbar is visible
-        const navbarContainer = document.getElementById('navbar-container');
-        if (navbarContainer) {
-            navbarContainer.style.display = 'block';
-        }
-    }, 100);
+    // Mobile menu HTML is no longer needed as we're using Bootstrap's native toggle
+
+
 });
