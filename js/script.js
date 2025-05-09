@@ -575,9 +575,9 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 4, // Reduced from 4
         spaceBetween: 40, // Increased from 30
         loop: true,
-        speed: 600,
+        speed: 400, // Reduced from 600 to make transitions faster
         autoplay: {
-            delay: 1500, // Increased from 1000 for better visibility
+            delay: 1000, // Reduced from 1500 for faster sliding
             disableOnInteraction: false,
         },
         navigation: {
@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spaceBetween: 40,
         grabCursor: true,
         loop: true,
-        speed: 600,
+        speed: 400, // Reduced from 600 to make transitions faster
         effect: "coverflow",
         coverflowEffect: {
             rotate: 5,
@@ -637,7 +637,7 @@ document.addEventListener('DOMContentLoaded', function() {
             slideShadows: false,
         },
         autoplay: {
-            delay: 2000,
+            delay: 1500, // Reduced from 2000 for faster sliding
             disableOnInteraction: false,
         },
         pagination: {

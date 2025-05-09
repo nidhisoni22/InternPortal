@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awards & Recognition - Employment Express Verband LLP</title>
+    <title>Awards & Recognition</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/logos/InternBoot.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -2058,6 +2060,7 @@
             <div class="govt-partners-slider-container mt-5">
                 <div class="swiper govt-partners-slider">
                     <div class="swiper-wrapper">
+
                         <div class="swiper-slide">
                             <img src="img/logos/DSCI.png" alt="DSCI logo" class="partner-logo">
                         </div>
@@ -2090,10 +2093,12 @@
                 .govt-partners-slider-container {
                     padding: 20px 0;
                     position: relative;
+                    overflow: hidden; /* Ensure no overflow during fast transitions */
                 }
 
                 .govt-partners-slider {
                     padding: 30px 50px;
+                    will-change: transform; /* Hardware acceleration for smoother animations */
                 }
 
                 .govt-partners-slider .swiper-slide {
@@ -2107,11 +2112,12 @@
                     max-height: 120px;
                     max-width: 90%;
                     object-fit: contain;
-                    transition: all 0.3s ease;
+                    transition: all 0.2s ease; /* Faster transition to match slider speed */
                     background: white;
                     border-radius: 15px;
                     padding: 20px;
                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                    will-change: transform; /* Optimize for animations */
                 }
 
                 .partner-logo:hover {
@@ -2182,6 +2188,18 @@
                         max-height: 80px;
                         padding: 10px;
                     }
+                }
+
+                /* Add smooth sliding animation */
+                .govt-partners-slider .swiper-wrapper {
+                    transition-timing-function: linear !important;
+                }
+
+                /* Optimize for performance */
+                .govt-partners-slider .swiper-slide {
+                    backface-visibility: hidden;
+                    transform: translateZ(0);
+                    perspective: 1000px;
                 }
             </style>
         </div>
@@ -2418,13 +2436,15 @@
                     slidesPerView: 1,
                     spaceBetween: 30,
                     loop: true,
-                    speed: 800,
+                    loopAdditionalSlides: 10, // Add more slides for smoother looping
+                    loopFillGroupWithBlank: true, // Fill empty slides
+                    speed: 200, // Reduced from 400 to make transitions much faster
                     autoplay: {
-                        delay: 3000,
+                        delay: 1000, // Reduced from 2000 to show next slide much faster
                         disableOnInteraction: false,
                     },
                     // Add consistent timing between slides
-                    autoplaySpeed: 3000,
+                    autoplaySpeed: 1000, // Reduced to match the delay
                     pagination: {
                         el: '.govt-partners-slider-pagination',
                         clickable: true,
@@ -2443,11 +2463,11 @@
                             spaceBetween: 30,
                         },
                         992: {
-                            slidesPerView: 4,
+                            slidesPerView: 3, // Reduced from 4 to ensure enough slides for looping
                             spaceBetween: 40,
                         },
                         1200: {
-                            slidesPerView: 5,
+                            slidesPerView: 3, // Reduced from 5 to ensure enough slides for looping
                             spaceBetween: 50,
                         },
                     },
@@ -2466,6 +2486,11 @@
 
                 // Force start the autoplay immediately
                 govtPartnersSlider.autoplay.start();
+
+                // Set a faster interval for the slider to ensure it keeps moving quickly
+                setInterval(() => {
+                    govtPartnersSlider.slideNext();
+                }, 1500);
 
 
             }, 500); // Small delay to ensure DOM is fully ready

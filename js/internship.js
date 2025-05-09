@@ -200,7 +200,7 @@ function initCertificateSlider() {
         spaceBetween: 25,
         grabCursor: true,
         loop: true,
-        speed: 800,
+        speed: 400, // Reduced from 800 to make transitions faster
         effect: "coverflow",
         coverflowEffect: {
             rotate: 0,
@@ -210,7 +210,7 @@ function initCertificateSlider() {
             slideShadows: false,
         },
         autoplay: {
-            delay: 3000,
+            delay: 1500, // Reduced from 3000 for faster sliding
             disableOnInteraction: false,
         },
         pagination: {
